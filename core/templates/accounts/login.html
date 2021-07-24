@@ -2,7 +2,7 @@
 
 {% block title %} Login {% endblock %}
 
-{% block content %} 
+{% block content %}
 
 	<!-- [ auth-signin ] start -->
 	<div class="auth-wrapper">
@@ -14,21 +14,21 @@
 
 							<img src="/static/assets/images/logo-dark.png" alt="" class="img-fluid mb-4">
 							<h4 class="mb-3 f-w-400">
-								Sign IN
+								وارد شوید
 							</h4>
 							<span class="mb-0 text-muted">
 								{% if msg %}
 									{{ msg | safe }}
 								{% else %}
-									Add your credentials
-								{% endif %} 
+									اطلاعات خود را وارد کنید
+								{% endif %}
 							</span>
 							<!-- dummy spacer -->
-							<p> <br /> </p>						
+							<p> <br /> </p>
 							<form role="form" method="post" action="">
 
-								{% csrf_token %} 
-								
+								{% csrf_token %}
+
 								<div class="input-group mb-3">
 									<div class="input-group-prepend">
 										<span class="input-group-text"><i class="feather icon-user"></i></span>
@@ -44,19 +44,17 @@
 								<div class="form-group text-left mt-2">
 									<div class="checkbox checkbox-primary d-inline">
 										<input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
-										<label for="checkbox-fill-a1" class="cr"> Save credentials</label>
+										<label for="checkbox-fill-a1" class="cr"> ذخیره اطلاعات </label>
 									</div>
 								</div>
-								<button type="submit" name="login" class="btn btn-block btn-primary mb-4">Signin</button>
-							
+								<button type="submit" name="login" class="btn btn-block btn-primary mb-4">ورود</button>
+
 							</form>
 
-							<p class="mb-0 text-muted">Don’t have an account? <a href="{% url 'register' %}" class="f-w-400">Signup</a></p>
+							<p class="mb-0 text-muted"> حساب کاربری ندارید؟ <a href="{% url 'register' %}" class="f-w-400">ثبت نام</a></p>
 							<p class="mb-2 text-muted">
 								<br />
-								&copy; <a target="_blank" rel="noopener" href="https://bit.ly/37fF9RT" class="f-w-400">CodedThemes</a>
-								- <a target="_blank" rel="noopener" 
-								     href="https://appseed.us/admin-dashboards/django-dashboard-gradientable" class="f-w-400">Django Gradient</a>
+								&copy; <a target="_blank" rel="noopener" href="https://bit.ly/37fF9RT" class="f-w-400">Atrotech™</a>
 							</p>
 						</div>
 					</div>
@@ -73,4 +71,4 @@
 
 	<script src="/static/assets/js/waves.min.js"></script>
 
-{% endblock javascripts %} 
+{% endblock javascripts %}

@@ -22675,7 +22675,7 @@ pre[class*=language-]:before {
 
 .pcoded-header.header-blue {
     background: -webkit-gradient(linear, left top, right top, from(#4099ff), to(#73b4ff));
-    background: linear-gradient(to right, #4099ff, #73b4ff);
+    background: linear-gradient(to right, #0d1b2b, #33639a);
     color: rgba(255, 255, 255, 0.8);
 }
 
