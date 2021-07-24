@@ -108,7 +108,7 @@
                             </div>
                             <ul class="pro-body">
 														  	{% if request.user.is_superuser %}
-	                                <li><a href="% url 'admin:index' %}" class="dropdown-item"><i class="feather icon-user"></i>  پنل مدیریت  </a></li>
+	                                <li><a href="admin/" class="dropdown-item"><i class="feather icon-user"></i>  پنل مدیریت  </a></li>
 														  	{% endif %}
                                 <li><a href="#" class="dropdown-item"><i class="feather icon-user"></i> {{ request.user.username }} پروفایل  </a></li>
                             </ul>
