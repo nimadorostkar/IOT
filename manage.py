@@ -1,10 +1,8 @@
-#!/usr/bin/env python
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
-
 import os
 import sys
+
+
+
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')

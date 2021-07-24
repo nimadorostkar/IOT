@@ -1,12 +1,12 @@
 # MIT License
 
-Copyright (c) 2019 - present [AppSeed](http://appseed.us/)
+Copyright (c) 2020 - present [Atrotech](http://atrotech.ir/)
 
-<br />
+<br>
 
 ## Licensing Information
 
-<br />
+<br>
 
 | Item | - |
 | ---------------------------------- | --- |
@@ -26,7 +26,7 @@ Copyright (c) 2019 - present [AppSeed](http://appseed.us/)
 | Create Theme/Template for CMS for sale | NO |
 | Separate sale of our UI Elements | NO |
 
-<br />
+<br>
 
 ---
-For more information regarding licensing, please contact the AppSeed Service < *support@appseed.us* >
+For more information regarding licensing, please contact the AppSeed Service < *support@atrotech.ir* >
