@@ -5,34 +5,40 @@
 			<div class="navbar-content scroll-div " >
 				<ul class="nav pcoded-inner-navbar ">
 					<li class="nav-item pcoded-menu-caption">
-						<label>Navigation</label>
+						<label> IOT </label>
 					</li>
 					<li class="nav-item">
 					    <a href="/" class="nav-link ">
                 <span class="pcoded-micon"> <i class="feather icon-home"></i> </span>
-								<span class="pcoded-mtext">Dashboard</span>
+								<span class="pcoded-mtext"> داشبورد </span>
+							</a>
+					</li>
+					<li class="nav-item">
+					    <a href="/nodes.html" class="nav-link ">
+                <span class="pcoded-micon"> <i class="feather icon-home"></i> </span>
+								<span class="pcoded-mtext"> نود ها </span>
+							</a>
+					</li>
+					<li class="nav-item">
+					    <a href="/bc_alert.html" class="nav-link ">
+                <span class="pcoded-micon"> <i class="feather icon-home"></i> </span>
+								<span class="pcoded-mtext"> سنسور ها </span>
 							</a>
 					</li>
 					<li class="nav-item">
 					    <a href="/nodes.html" class="nav-link ">
                 <span class="pcoded-micon"> <i class="feather icon-award"></i> </span>
-								<span class="pcoded-mtext"> Nodes </span>
+								<span class="pcoded-mtext"> گزارش گیری </span>
 							</a>
 					</li>
-					<li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Page layouts</span></a>
-					    <ul class="pcoded-submenu">
-					        <li><a href="/layout-vertical.html">Vertical</a></li>
-					        <li><a href="/layout-horizontal.html">Horizontal</a></li>
-					    </ul>
-					</li>
+
 
 					<li class="nav-item pcoded-menu-caption">
 						<label> نود ها </label>
 					</li>
 
 					<li class="nav-item pcoded-hasmenu">
-						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext"> node1 </span></a>
+						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext"> نود۱ </span></a>
 						<ul class="pcoded-submenu">
 							<li><a href="/bc_toasts.html">Toasts</a></li>
 							<li><a href="/bc_extra.html">Other</a></li>
@@ -40,7 +46,7 @@
 					</li>
 
 					<li class="nav-item pcoded-hasmenu">
-						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext"> node2 </span></a>
+						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext"> نود۲ </span></a>
 						<ul class="pcoded-submenu">
 							<li><a href="/bc_alert.html">Alert</a></li>
 							<li><a href="/bc_button.html">Button</a></li>
@@ -51,7 +57,7 @@
 					</li>
 
 					<li class="nav-item pcoded-hasmenu">
-						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext"> node3 </span></a>
+						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext"> نود۳ </span></a>
 						<ul class="pcoded-submenu">
 							<li><a href="/bc_alert.html">Alert</a></li>
 							<li><a href="/bc_button.html">Button</a></li>
@@ -60,6 +66,76 @@
 							<li><a href="/bc_extra.html">Other</a></li>
 						</ul>
 					</li>
+
+
+					<li class="nav-item pcoded-menu-caption">
+						<label> حساب کاربری </label>
+					</li>
+					<li class="nav-item">
+					    <a href="{% url 'logout' %}" class="nav-link "><span class="pcoded-micon">
+						    <i class="feather icon-user"></i></span><span class="pcoded-mtext"> پروفایل </span>
+						  </a>
+					</li>
+					<li class="nav-item">
+					    <a href="{% url 'logout' %}" class="nav-link "><span class="pcoded-micon">
+						    <i class="feather icon-log-out"></i></span><span class="pcoded-mtext"> خروج </span>
+						  </a>
+					</li>
+					<li class="nav-item">
+					    <a target="_blank" rel="noopener" href="https://appseed.us/support" class="nav-link "><span class="pcoded-micon">
+						    <i class="feather icon-settings"></i></span><span class="pcoded-mtext"> تنظیمات </span>
+					  	</a>
+					</li>
+
+
+
+					<li class="nav-item pcoded-menu-caption">
+						<label> آتروتک </label>
+					</li>
+					<li class="nav-item">
+					    <a href="{% url 'logout' %}" class="nav-link "><span class="pcoded-micon">
+						    <i class="feather icon-user"></i></span><span class="pcoded-mtext"> مستندات </span>
+						  </a>
+					</li>
+					<li class="nav-item">
+					    <a href="{% url 'logout' %}" class="nav-link "><span class="pcoded-micon">
+						    <i class="feather icon-user"></i></span><span class="pcoded-mtext"> سوالات متداول </span>
+						  </a>
+					</li>
+					<li class="nav-item">
+					    <a target="_blank" rel="noopener" href="https://appseed.us/support" class="nav-link "><span class="pcoded-micon">
+						    <i class="feather icon-info"></i></span><span class="pcoded-mtext"> پشتیبانی </span>
+					  	</a>
+					</li>
+
+
+
+<br><hr><br>
+
+
+						<li class="nav-item pcoded-menu-caption">
+							<label>Navigation</label>
+						</li>
+						<li class="nav-item">
+								<a href="/" class="nav-link ">
+									<span class="pcoded-micon"> <i class="feather icon-home"></i> </span>
+									<span class="pcoded-mtext"> داشبورد </span>
+								</a>
+						</li>
+						<li class="nav-item">
+								<a href="/nodes.html" class="nav-link ">
+									<span class="pcoded-micon"> <i class="feather icon-award"></i> </span>
+									<span class="pcoded-mtext"> Nodes </span>
+								</a>
+						</li>
+						<li class="nav-item pcoded-hasmenu">
+								<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Page layouts</span></a>
+								<ul class="pcoded-submenu">
+										<li><a href="/layout-vertical.html">Vertical</a></li>
+										<li><a href="/layout-horizontal.html">Horizontal</a></li>
+								</ul>
+						</li>
+
 
 
 					<li class="nav-item pcoded-menu-caption">
