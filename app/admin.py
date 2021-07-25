@@ -8,12 +8,12 @@ from .models import Rom, Node1, Temp12, Gps2, Sd1, Modem1
 
 #------------------------------------------------------------------------------
 class RomAdmin(admin.ModelAdmin):
-    list_display = ('UUID', 'family_id', 'node_id', 'created_on')
+    list_display = ('name', 'UUID', 'family_id', 'node_id', 'created_on')
 admin.site.register(models.Rom, RomAdmin)
 
 #------------------------------------------------------------------------------
 class Node1Admin(admin.ModelAdmin):
-    list_display = ('name', 'UUID', 'status', 'tamper', 'moves', 'resets', 'charger', 'USB', 'HMI', 'cpuTemp')
+    list_display = ('UUID', 'status', 'tamper', 'moves', 'resets', 'charger', 'USB', 'HMI', 'cpuTemp')
 admin.site.register(models.Node1, Node1Admin)
 
 #------------------------------------------------------------------------------
