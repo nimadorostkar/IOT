@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 
 #------------------------------------------------------------------------------
 class Rom(models.Model):
+    name = models.CharField(max_length=40)
     UUID = models.CharField(max_length=20)
     family_id = models.CharField(max_length=20)
     node_id = models.CharField(max_length=20)
@@ -20,7 +21,6 @@ class Rom(models.Model):
 
 #------------------------------------------------------------------------------
 class Node1(models.Model):
-    name = models.CharField(max_length=40)
     UUID = models.CharField(max_length=20)
     status = models.CharField(max_length=20)
     tamper = models.CharField(max_length=20)
