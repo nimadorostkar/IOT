@@ -35,33 +35,6 @@
           <!-- [ breadcrumb ] end -->
 
 
-<hr>
-
-<iframe
-  width="700"
-  height="300"
-  frameborder="0"
-  scrolling="no"
-  marginheight="0"
-  marginwidth="0"
-  src="https://maps.google.com/maps?q=35.670824,51.482061&hl=es&z=14&amp;output=embed"
- >
- </iframe>
- <br />
- <small>
-   <a
-    href="https://maps.google.com/maps?q='+data.lat+','+data.lon+'&hl=es;z=14&amp;output=embed"
-    style="color:#0000FF;text-align:left"
-    target="_blank"
-   >
-     See map bigger
-   </a>
- </small>
-
-<hr>
-
-
-
 
 
       <div class="row">
@@ -78,25 +51,46 @@
                           </div>
                       </div>
                       <div align="center">
-                          ggggg
+                          <iframe
+                            width="250"
+                            height="130"
+                            frameborder="2"
+                            scrolling="yes"
+                            marginheight="0"
+                            marginwidth="0"
+                            src="https://maps.google.com/maps?q=35.670824,51.482061&hl=es&z=14&amp;output=embed">
+                           </iframe>
                       </div>
-                      <div class="row mt-3">
-                          <div class="col text-right"">
-                            <span class="text-white"> <small>Lat:</small> 345456456 </span>
-                             <br>
-                            <span class="text-white"> <small>Long:</small> 345456456 </span>
-                          </div>
-                      </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                              <div class="spinner-grow text-success" role="status">
+                                <span class="sr-only">Loading...</span>
+                              </div>
+                            </div>
+                            <div class="col-md-9">
+                              <div class="col text-right">
+                                <small>lat: 35.670824</small>
+                                <br>
+                                <small>lon: 51.482061</small>
+                              </div>
+                            </div>
+                        </div>
+                        <small class="ml-3"> 12 second ago </small>
                   </div>
               </div>
           </div>
+
+
+
+
 
           <div class="col-sm-3">
               <div class="card bg-primary text-white">
                   <div class="card-body bg-patern-white">
                       <div class="row">
                           <div class="col-auto">
-                              <span> Temperature </span> <br> <h5 class="text-white"> sensor name </h5>
+                            <img src="/static/assets/images/sensors/temp.png" width="25px">
+                              <span>Temperature</span> <br> <h5 class="text-white"> sensor name </h5>
                           </div>
                           <div class="col text-right">
                               <span class="text-white"> 43° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
@@ -105,7 +99,7 @@
                           </div>
                       </div>
                       <div align="center">
-                         <img src="/static/assets/images/sensors/temp.png" width="130px">
+                         ggg
                       </div>
                       <div class="row mt-3">
                           <div class="col">
