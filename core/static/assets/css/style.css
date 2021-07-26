@@ -271,6 +271,7 @@ File: style.css
 *::before,
 *::after {
     box-sizing: border-box;
+    color: red;
 }
 
 html {

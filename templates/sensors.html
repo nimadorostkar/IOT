@@ -39,7 +39,7 @@
 
       <div class="row">
 
-          <div class="col-sm-3">
+          <div class="col-sm-4">
               <div class="card bg-green text-white">
                   <div class="card-body bg-patern-white">
                       <div class="row">
@@ -83,8 +83,7 @@
 
 
 
-
-          <div class="col-sm-3">
+          <div class="col-sm-4">
               <div class="card bg-primary text-white">
                   <div class="card-body bg-patern-white">
                       <div class="row">
@@ -93,13 +92,13 @@
                               <span>Temperature</span> <br> <h5 class="text-white"> sensor name </h5>
                           </div>
                           <div class="col text-right">
-                              <span class="text-white"> 43° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
+                              <span class="text-white"> 72° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
                                <br>
-                              <span class="text-white"> 20° <i class="feather icon-arrow-down ml-1 text-danger"></i></span>
+                              <span class="text-white"> 48° <i class="feather icon-arrow-down ml-1 text-danger"></i></span>
                           </div>
                       </div>
-                      <div align="center">
-                         ggg
+                      <div align="center" style="background-color:#ffffff;">
+                         <div id="line-chart-temp"></div>
                       </div>
                       <div class="row mt-3">
                           <div class="col">
@@ -112,7 +111,7 @@
                               <small class="ml-3"> 12 second ago </small>
                           </div>
                           <div class="col text-right">
-                              <span class="text-white"> 20° <span style="font-size: 20px;" class="text-warning"> ~ </span> </span>
+                              <span class="text-white"> 62° <span style="font-size: 20px;" class="text-warning"> ~ </span> </span>
                           </div>
                       </div>
                   </div>
@@ -547,8 +546,6 @@
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
-    <!-- Apex Chart -->
     <script src="/static/assets/js/plugins/apexcharts.min.js"></script>
-    <!-- custom-chart js -->
-    <script src="/static/assets/js/pages/dashboard-main.js"></script>
+    <script src="/static/assets/js/pages/chart-apex.js"></script>
 {% endblock javascripts %}

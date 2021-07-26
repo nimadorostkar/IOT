@@ -1,6 +1,64 @@
 'use strict';
 $(document).ready(function() {
     setTimeout(function() {
+
+
+
+
+
+      $(function() {
+          var options = {
+              chart: {
+                  height: 300,
+                  type: 'line',
+                  zoom: {
+                      enabled: false
+                  }
+              },
+              dataLabels: {
+                  enabled: false,
+                  width: 2,
+              },
+              stroke: {
+                  curve: 'straight',
+              },
+              colors: ["#4099ff"],
+              fill: {
+                  type: "gradient",
+                  gradient: {
+                      shade: 'light'
+                  },
+              },
+              series: [{
+                  name: "temp",
+                  data: [60, 71, 55, 61, 49, 62, 69]
+              }],
+              title: {
+                  text: '',
+                  align: 'left'
+              },
+              grid: {
+                  row: {
+                      colors: ['#f3f6ff', 'transparent'], // takes an array which will be repeated on columns
+                      opacity: 0.5
+                  },
+              },
+              xaxis: {
+                  categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
+              }
+          }
+          var chart = new ApexCharts(
+              document.querySelector("#line-chart-temp"),
+              options
+          );
+          chart.render();
+      });
+
+
+
+
+
+
         $(function() {
             var options = {
                 chart: {
@@ -48,6 +106,12 @@ $(document).ready(function() {
             );
             chart.render();
         });
+
+
+
+
+
+
         $(function() {
             var lastDate = 0;
             var data = []
