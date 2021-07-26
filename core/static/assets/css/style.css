@@ -19784,6 +19784,14 @@ pre[class*=language-]:before {
     background: linear-gradient(45deg, #0d5f14, #07afca) !important;
 }
 
+.bg-pppurple {
+    background: linear-gradient(45deg, #5301ad, #0085ad) !important;
+}
+
+.bg-grey {
+    background: linear-gradient(45deg, #444444c7, #000000) !important;
+}
+
 .text-primary {
     color: #4099ff !important;
 }
