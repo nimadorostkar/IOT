@@ -31,7 +31,7 @@ $(document).ready(function() {
               },
               series: [{
                   name: "temp",
-                  data: [60, 71, 55, 61, 49, 62, 69]
+                  data: [35, 37, 36, 38, 35, 36, 38]
               }],
               title: {
                   text: '',
