@@ -17877,7 +17877,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 .card .card-block,
   .card .card-body {
-    padding: 20px 25px;
+    padding: 20px 10px 10px 10px;
+
 }
 
 .card.card-load {
@@ -19710,7 +19711,7 @@ pre[class*=language-]:before {
 /*====== Padding , Margin css ends ======*/
 /*====== text-color, background & border css starts ======*/
 .bg-c-blue {
-    background: linear-gradient(45deg, #4099ff, #73b4ff);
+    background: linear-gradient(45deg, #00234a, #599cea);
 }
 
 .text-c-blue {
