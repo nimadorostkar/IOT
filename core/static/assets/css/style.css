@@ -19773,7 +19773,15 @@ pre[class*=language-]:before {
 /*====== text-color, background & border css ends ======*/
 /*====== [ overrides bootstrap color ]text-color, background & border css starts ======*/
 .bg-primary {
-    background: linear-gradient(45deg, #4099ff, #73b4ff) !important;
+    background: linear-gradient(45deg, #173250, #1095d4) !important;
+}
+
+.bg-orange {
+    background: linear-gradient(45deg, #bd831b, #d41010) !important;
+}
+
+.bg-green {
+    background: linear-gradient(45deg, #0d5f14, #07afca) !important;
 }
 
 .text-primary {
