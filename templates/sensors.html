@@ -11,10 +11,6 @@
     <section class="pcoded-main-container">
         <div class="pcoded-content">
 
-
-
-
-
           <!-- [ breadcrumb ] start -->
           <div class="page-header">
             <div class="page-block">
@@ -34,6 +30,78 @@
           </div>
           <!-- [ breadcrumb ] end -->
 
+<hr>
+
+          <div class="container">
+        		<div class="row">
+        			<div class="col-sm">
+        				One of three columns
+        			</div>
+        			<div class="col-sm">
+        				One of three columns
+        			</div>
+        			<div class="col-sm">
+        				One of three columns
+        			</div>
+        		</div>
+        	</div>
+
+
+
+
+
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    gghfgh fhfhgfgh fghf <br>
+                    <a href="#!" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      V
+                    </a>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="card-body collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+                  sustainable VHS.
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <br><hr><br>
+
+
+            <button class="collapsible">Open Collapsible</button>
+            <div class="collapsiblecontent">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+
+                for (i = 0; i < coll.length; i++) {
+                  coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                      content.style.maxHeight = null;
+                    } else {
+                      content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                  });
+                }
+            </script>
+
+
+
+
+<br><hr><br>
 
 
 
