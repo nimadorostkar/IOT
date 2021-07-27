@@ -9,7 +9,7 @@ $(document).ready(function() {
       $(function() {
           var options = {
               chart: {
-                  height: 300,
+                  height: 250,
                   type: 'line',
                   zoom: {
                       enabled: false
@@ -22,7 +22,7 @@ $(document).ready(function() {
               stroke: {
                   curve: 'straight',
               },
-              colors: ["#4099ff"],
+              colors: ["#ea680b"],
               fill: {
                   type: "gradient",
                   gradient: {
@@ -39,7 +39,7 @@ $(document).ready(function() {
               },
               grid: {
                   row: {
-                      colors: ['#f3f6ff', 'transparent'], // takes an array which will be repeated on columns
+                      colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
                       opacity: 0.5
                   },
               },
