@@ -60,6 +60,62 @@ $(document).ready(function() {
 
 
 
+
+
+            $(function() {
+                var options = {
+                    chart: {
+                        height: 250,
+                        type: 'line',
+                        zoom: {
+                            enabled: false
+                        }
+                    },
+                    dataLabels: {
+                        enabled: false,
+                        width: 2,
+                    },
+                    stroke: {
+                        curve: 'straight',
+                    },
+                    colors: ["#ea680b"],
+                    fill: {
+                        type: "gradient",
+                        gradient: {
+                            shade: 'light'
+                        },
+                    },
+                    series: [{
+                        name: "temp",
+                        data: [35, 37, 36, 38, 35, 36, 38]
+                    }],
+                    title: {
+                        text: '',
+                        align: 'left'
+                    },
+                    grid: {
+                        row: {
+                            colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                            opacity: 0.5
+                        },
+                    },
+                    xaxis: {
+                        categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
+                    }
+                }
+                var chart = new ApexCharts(
+                    document.querySelector("#line-chart-brightness"),
+                    options
+                );
+                chart.render();
+            });
+
+
+
+
+
+
+
       $(function() {
           var options = {
               chart: {
@@ -227,6 +283,52 @@ $(document).ready(function() {
           }
           var chart = new ApexCharts(
               document.querySelector("#radialBar-chart-pressure"),
+              options
+          );
+          chart.render();
+      });
+
+
+
+
+
+      $(function() {
+          var options = {
+              chart: {
+                  height: 320,
+                  type: 'pie',
+              },
+              labels: ['Free', 'Used'],
+              series: [200, 800],
+              colors: ["#0e9e4a", "#FFB64D"],
+              legend: {
+                  show: true,
+                  position: 'bottom',
+              },
+              fill: {
+                  type: 'gradient',
+                  gradient: {
+                      shade: 'light',
+                      inverseColors: true,
+                  }
+              },
+              dataLabels: {
+                  enabled: true,
+                  dropShadow: {
+                      enabled: false,
+                  }
+              },
+              responsive: [{
+                  breakpoint: 480,
+                  options: {
+                      legend: {
+                          position: 'bottom'
+                      }
+                  }
+              }]
+          }
+          var chart = new ApexCharts(
+              document.querySelector("#pie-chart-sd"),
               options
           );
           chart.render();
