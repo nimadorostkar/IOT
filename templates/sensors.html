@@ -34,12 +34,53 @@
 
           <div class="container">
         		<div class="row">
-        			<div class="col-sm">
-        				One of three columns
+
+              <div class="col-sm">
+                    <div class="card bg-green text-white">
+                        <div class="card-body bg-patern-white">
+                            <div class="row">
+                                <div class="col-auto">
+                                  <img src="/static/assets/images/sensors/gps.png" width="25px">
+                                  <span>GPS</span>
+                                </div>
+                                <div class="col text-right">
+                                  <small>
+                                    lat: <span style="font-size: 14px;" class="text-warning">35.670824</span>
+                                    &nbsp;
+                                    long: <span style="font-size: 14px;" class="text-warning">51.482061</span>
+                                  </small>
+                                </div>
+                            </div>
+                            <div align="center">
+                              <a href="#!" class="badge badge-secondary collapsible">Extend <i class="feather icon-map"></i> </a>
+                              <div class="collapsiblecontent">
+                                <iframe
+                                  width="300"
+                                  height="270"
+                                  frameborder="0"
+                                  scrolling="yes"
+                                  marginheight="0"
+                                  marginwidth="0"
+                                  src="https://maps.google.com/maps?q=35.670824,51.482061&hl=es&z=14&amp;output=embed">
+                                 </iframe>
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <h3 class="m-0 text-white">
+                                      <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
+                                    </h3>
+                                    <small class="ml-3"> 12 second ago </small>
+                                </div>
+                                <div class="col">
+                                    <h4 class="m-0 text-white text-right"> sensor name  </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         			</div>
 
         			<div class="col-sm">
-
                     <div class="card bg-primary text-white">
                         <div class="card-body bg-patern-white">
                             <div class="row">
@@ -73,13 +114,45 @@
                             </div>
                         </div>
                     </div>
-
         			</div>
 
-        			<div class="col-sm">
-        				One of three columns
+              <div class="col-sm">
+                    <div class="card bg-pppurple text-white">
+                        <div class="card-body bg-patern-white">
+                            <div class="row">
+                                <div class="col-auto">
+                                  <img src="/static/assets/images/sensors/humidity.png" width="25px">
+                                  <span>Humidity & Temp</span>
+                                </div>
+                                <div class="col text-right">
+                                    <span class="text-white"> 25% 72° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
+                                    <span class="text-white"> 12% 48° <i class="feather icon-arrow-down ml-1 text-danger"></i></span>
+                                    <span class="text-white"> 19% 62° &nbsp;&nbsp;<span style="font-size: 20px;" class="text-warning">~</span> </span>
+                                </div>
+                            </div>
+                            <div align="center">
+                              <a href="#!" class="badge badge-secondary collapsible">Extend <i class="feather icon-pie-chart"></i> </a>
+                              <div class="collapsiblecontent" style="background-color:#ffffff4f;">
+                                  <div class="text-dark" id="line-chart-temp"></div>
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <h4 class="m-0 text-white">
+                                      <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
+                                      18% 48°
+                                    </h4>
+                                    <small class="ml-3"> 12 second ago </small>
+                                </div>
+                                <div class="col">
+                                    <h4 class="m-0 text-white text-right"> sensor name  </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         			</div>
-        		</div>
+
+
         	</div>
 
 
@@ -102,85 +175,6 @@
 
       <div class="row">
 
-          <div class="col-sm-3">
-              <div class="card bg-green text-white">
-                  <div class="card-body bg-patern-white">
-                      <div class="row">
-                          <div class="col-auto">
-                              <img src="/static/assets/images/sensors/gps.png" width="20px">
-                              <span> GPS </span>
-                              <br>
-                              <h5 class="text-white"> sensor name </h5>
-                          </div>
-                      </div>
-                      <div align="center">
-                          <iframe
-                            width="250"
-                            height="280"
-                            frameborder="2"
-                            scrolling="yes"
-                            marginheight="0"
-                            marginwidth="0"
-                            src="https://maps.google.com/maps?q=35.670824,51.482061&hl=es&z=14&amp;output=embed">
-                           </iframe>
-                      </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                              <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
-                            </div>
-                            <div class="col-md-9">
-                              <div class="col text-right">
-                                <small>lat: 35.670824</small>
-                                <br>
-                                <small>lon: 51.482061</small>
-                              </div>
-                            </div>
-                        </div>
-                        <small class="ml-3"> 12 second ago </small>
-                  </div>
-              </div>
-          </div>
-
-
-
-          <div class="col-sm-3">
-              <div class="card bg-primary text-white">
-                  <div class="card-body bg-patern-white">
-                      <div class="row">
-                          <div class="col-auto">
-                            <img src="/static/assets/images/sensors/temp.png" width="25px">
-                              <span>Temperature</span> <br> <h5 class="text-white"> sensor name </h5>
-                          </div>
-                          <div class="col text-right">
-                              <span class="text-white"> 72° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
-                               <br>
-                              <span class="text-white"> 48° <i class="feather icon-arrow-down ml-1 text-danger"></i></span>
-                          </div>
-                      </div>
-                      <div align="center"> <br>
-                        <img src="/static/assets/images/sensors/temp.png" width="160px">
-                        <p style="font-size:60px;">43</p>
-                      </div>
-                      <div class="row mt-3">
-                          <div class="col">
-                            <div class="row">
-                                <div class="col-md-3">
-                                  <div class="spinner-grow text-success" role="status">
-                                    <span class="sr-only">Loading...</span>
-                                  </div>
-                                </div>
-                                <div class="col-md-9">
-                                  <div class="col text-right">
-                                      <span class="text-white"> 62° <span style="font-size: 20px;" class="text-warning"> ~ </span> </span>
-                                  </div>
-                                </div>
-                            </div>
-                            <small class="ml-3"> 12 second ago </small>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
 
           <div class="col-sm-3">
               <div class="card bg-grey text-white">
