@@ -299,7 +299,7 @@ $(document).ready(function() {
                   type: 'pie',
               },
               labels: ['Free', 'Used'],
-              series: [200, 800],
+              series: [200, 1800],
               colors: ["#0e9e4a", "#FFB64D"],
               legend: {
                   show: true,
