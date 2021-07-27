@@ -58,6 +58,60 @@ $(document).ready(function() {
 
 
 
+
+
+      $(function() {
+          var options = {
+              chart: {
+                  height: 250,
+                  type: 'line',
+                  zoom: {
+                      enabled: false
+                  }
+              },
+              dataLabels: {
+                  enabled: false,
+                  width: 2,
+              },
+              stroke: {
+                  curve: 'straight',
+              },
+              colors: ["#ea680b"],
+              fill: {
+                  type: "gradient",
+                  gradient: {
+                      shade: 'light'
+                  },
+              },
+              series: [{
+                  name: "temp",
+                  data: [35, 37, 36, 38, 35, 36, 38]
+              }],
+              title: {
+                  text: '',
+                  align: 'left'
+              },
+              grid: {
+                  row: {
+                      colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                      opacity: 0.5
+                  },
+              },
+              xaxis: {
+                  categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
+              }
+          }
+          var chart = new ApexCharts(
+              document.querySelector("#line-chart-sh"),
+              options
+          );
+          chart.render();
+      });
+
+
+
+
+
       $(function() {
           var options = {
               chart: {
