@@ -141,6 +141,49 @@ $(document).ready(function() {
 
 
 
+      $(function() {
+          var options = {
+              chart: {
+                  height: 350,
+                  type: 'radialBar',
+              },
+              plotOptions: {
+                  radialBar: {
+                      hollow: {
+                          size: '60%',
+                      }
+                  },
+              },
+              colors: ["#4099ff"],
+              fill: {
+                  type: 'gradient',
+                  gradient: {
+                      shade: 'dark',
+                      type: 'vertical',
+                      shadeIntensity: 0.5,
+                      gradientToColors: ['#0e9e4a'],
+                      inverseColors: true,
+                      opacityFrom: 1,
+                      opacityTo: 1,
+                      stops: [0, 100]
+                  }
+              },
+              series: [60],
+              labels: ['Cricket'],
+          }
+          var chart = new ApexCharts(
+              document.querySelector("#radialBar-chart-pressure"),
+              options
+          );
+          chart.render();
+      });
+
+
+
+
+
+
+
 
 
 

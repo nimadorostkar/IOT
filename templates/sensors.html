@@ -35,7 +35,7 @@
           <div class="container">
         		<div class="row">
 
-              <div class="col-sm">
+              <div class="col-4">
                     <div class="card bg-green text-white">
                         <div class="card-body bg-patern-white">
                             <div class="row">
@@ -73,14 +73,14 @@
                                     <small class="ml-3"> 12 second ago </small>
                                 </div>
                                 <div class="col">
-                                    <h4 class="m-0 text-white text-right"> sensor name  </h4>
+                                    <a href="#"><h4 class="m-0 text-white text-right"> sensor name  </h4></a>
                                 </div>
                             </div>
                         </div>
                     </div>
         			</div>
 
-        			<div class="col-sm">
+        			<div class="col-4">
                     <div class="card bg-primary text-white">
                         <div class="card-body bg-patern-white">
                             <div class="row">
@@ -109,14 +109,14 @@
                                     <small class="ml-3"> 12 second ago </small>
                                 </div>
                                 <div class="col">
-                                    <h4 class="m-0 text-white text-right"> sensor name  </h4>
+                                    <a href="#"><h4 class="m-0 text-white text-right"> sensor name  </h4></a>
                                 </div>
                             </div>
                         </div>
                     </div>
         			</div>
 
-              <div class="col-sm">
+              <div class="col-4">
                     <div class="card bg-pppurple text-white">
                         <div class="card-body bg-patern-white">
                             <div class="row">
@@ -145,7 +145,85 @@
                                     <small class="ml-3"> 12 second ago </small>
                                 </div>
                                 <div class="col">
-                                    <h4 class="m-0 text-white text-right"> sensor name  </h4>
+                                    <a href="#"><h4 class="m-0 text-white text-right"> sensor name  </h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        			</div>
+
+
+              <div class="col-4">
+                    <div class="card bg-orange text-white">
+                        <div class="card-body bg-patern-white">
+                            <div class="row">
+                                <div class="col-auto">
+                                  <img src="/static/assets/images/sensors/pressure.png" width="25px">
+                                  <span>Pressure</span>
+                                </div>
+                                <div class="col text-right">
+                                    <span class="text-white"> 42 P <i class="feather icon-arrow-up ml-1 text-success"></i></span>
+                                    <span class="text-white"> 18 P <i class="feather icon-arrow-down ml-1 text-danger"></i></span>
+                                    <span class="text-white"> 33 P &nbsp;&nbsp;<span style="font-size: 20px;" class="text-warning">~</span> </span>
+                                </div>
+                            </div>
+                            <div align="center">
+                              <a href="#!" class="badge badge-secondary collapsible">Extend <i class="feather icon-pie-chart"></i> </a>
+                              <div class="collapsiblecontent" style="background-color:#ffffff4f;">
+                                  <div class="text-dark" id="radialBar-chart-pressure"></div>
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <h3 class="m-0 text-white">
+                                      <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
+                                      31 P
+                                    </h3>
+                                    <small class="ml-3"> 12 second ago </small>
+                                </div>
+                                <div class="col">
+                                    <a href="#"><h4 class="m-0 text-white text-right"> sensor name  </h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        			</div>
+
+
+              <div class="col-4">
+                    <div class="card bg-grey text-white">
+                        <div class="card-body bg-patern-white">
+                            <div class="row">
+                                <div class="col-auto">
+                                  <img src="/static/assets/images/sensors/node.png" width="30px">
+                                  <span>Node</span>
+                                </div>
+                                <div class="col text-right">
+                                  <small>
+                                    <span style="font-size: 12px;" class="text-warning">Tamper</span>
+                                    &nbsp;
+                                    <span style="font-size: 12px;" class="text-warning">Moves</span>
+                                    &nbsp;
+                                    <span style="font-size: 12px;" class="text-warning">HMI</span>
+                                    &nbsp;
+                                    <span style="font-size: 12px;" class="text-warning">USB</span>
+                                  </small>
+                                  <br>
+                                  <span style="font-size: 20px;" class="text-success">45°</span>
+                                  &nbsp;&nbsp;
+                                  <span style="font-size: 20px;" class="text-success">Charging</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <h5 class="m-0 text-success">
+                                      <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
+                                      Ready
+                                    </h5>
+                                    <small class="ml-3"> 12 second ago </small>
+                                </div>
+                                <div class="col">
+                                    <a href="#"><h4 class="m-0 text-white text-right"> sensor name  </h4></a>
                                 </div>
                             </div>
                         </div>
@@ -174,6 +252,7 @@
 
 
       <div class="row">
+
 
 
           <div class="col-sm-3">
@@ -205,34 +284,6 @@
               </div>
           </div>
 
-          <div class="col-sm-3">
-              <div class="card bg-pppurple text-white">
-                  <div class="card-body bg-patern-white">
-                      <div class="row">
-                          <div class="col-auto">
-                              <span> Humidity & Temp </span>
-                          </div>
-                          <div class="col text-right">
-                              <h2 class="mb-0 text-white">826</h2>
-                              <span class="text-white">8.2%<i class="feather icon-trending-up ml-1"></i></span>
-                          </div>
-                      </div>
-                      <div align="center">
-                         <img src="/static/assets/images/sensors/humidity.png" width="130px">
-                      </div>
-                      <div class="row mt-3">
-                          <div class="col">
-                              <h3 class="m-0 text-white"><i class="fas fa-circle f-10 m-r-5 text-success"></i>674</h3>
-                              <span class="ml-3">New</span>
-                          </div>
-                          <div class="col">
-                              <h3 class="m-0 text-white"><i class="fas fa-circle f-10 m-r-5 text-white"></i>182</h3>
-                              <span class="ml-3">Return</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
 
           <div class="col-sm-3">
               <div class="card bg-primary text-white">
@@ -331,34 +382,7 @@
               </div>
           </div>
 
-          <div class="col-sm-3">
-              <div class="card bg-orange text-white">
-                  <div class="card-body bg-patern-white">
-                      <div class="row">
-                          <div class="col-auto">
-                              <span> Pressure </span>
-                          </div>
-                          <div class="col text-right">
-                              <h2 class="mb-0 text-white">826</h2>
-                              <span class="text-white">8.2%<i class="feather icon-trending-up ml-1"></i></span>
-                          </div>
-                      </div>
-                      <div align="center">
-                         <img src="/static/assets/images/sensors/pressure.png" width="130px">
-                      </div>
-                      <div class="row mt-3">
-                          <div class="col">
-                              <h3 class="m-0 text-white"><i class="fas fa-circle f-10 m-r-5 text-success"></i>674</h3>
-                              <span class="ml-3">New</span>
-                          </div>
-                          <div class="col">
-                              <h3 class="m-0 text-white"><i class="fas fa-circle f-10 m-r-5 text-white"></i>182</h3>
-                              <span class="ml-3">Return</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+
 
           <div class="col-sm-3">
               <div class="card bg-grey text-white">
