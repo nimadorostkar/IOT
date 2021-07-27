@@ -184,6 +184,97 @@ $(document).ready(function() {
 
 
 
+      $(function() {
+          var options = {
+              chart: {
+                  height: 250,
+                  type: 'line',
+                  zoom: {
+                      enabled: false
+                  },
+              },
+              dataLabels: {
+                  enabled: false
+              },
+              stroke: {
+                  width: [5, 7, 5],
+                  curve: 'straight',
+                  dashArray: [0, 8, 5]
+              },
+              colors: ["ea680b", "#ea680b","ea680b"],
+              fill: {
+                  type: "gradient",
+                  gradient: {
+                      shade: 'light'
+                  },
+              },
+              series: [{
+                      name: "up",
+                      data: [50, 50, 50, 50, 50, 50, 50]
+                  },
+                  {
+                      name: "temp",
+                      data: [43, 43, 45, 47, 43, 41, 43]
+                  },
+                  {
+                      name: "down",
+                      data: [35, 35, 35, 35, 35, 35, 35]
+                  }
+              ],
+              title: {
+                  text: '',
+                  align: 'left'
+              },
+              markers: {
+                  size: 0,
+
+                  hover: {
+                      sizeOffset: 6
+                  }
+              },
+              xaxis: {
+                  categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
+              },
+              tooltip: {
+                  y: [{
+                      title: {
+                          formatter: function(val) {
+                              return val + " (mins)"
+                          }
+                      }
+                  }, {
+                      title: {
+                          formatter: function(val) {
+                              return val + " per session"
+                          }
+                      }
+                  }, {
+                      title: {
+                          formatter: function(val) {
+                              return val;
+                          }
+                      }
+                  }]
+              },
+              grid: {
+                  borderColor: '#f1f1f1',
+              }
+          }
+          var chart = new ApexCharts(
+              document.querySelector("#line-chart-tc"),
+              options
+          );
+          chart.render();
+      });
+
+
+
+
+
+
+
+
+
 
 
 
