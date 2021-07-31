@@ -16,7 +16,7 @@ class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True,related_name='profile',verbose_name = "کاربر")
   phone = models.CharField(max_length=50,null=True, blank=True,verbose_name = " شماره تماس  ")
   address = models.CharField(max_length=3000,null=True, blank=True,verbose_name = " آدرس  ")
-  user_photo = models.ImageField(upload_to='media/user_uploads/user_photo',default='media/user_uploads/user_photo/default.png',null=True, blank=True,verbose_name = "تصویر کاربر")
+  user_photo = models.ImageField(upload_to='media/user_photo',default='media/user_photo/default.png',null=True, blank=True,verbose_name = "تصویر کاربر")
 
 
   @receiver(post_save, sender=User)
