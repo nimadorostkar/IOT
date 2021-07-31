@@ -5,16 +5,10 @@ from .models import Profile
 
 
 
-admin.site.site_header= " حساب کاربری "
-admin.site.site_title= " حساب های کاربری "
-admin.site.register(LogEntry)
-
-
-
 
 
 #------------------------------------------------------------------------------
-class ProfileAdmin(ImportExportModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     list_display = ('user_name','phone','address')
     search_fields = ['user_name', 'phone', 'address']
 

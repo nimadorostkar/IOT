@@ -36,9 +36,6 @@ def login_view(request):
 
 
 
-
-
-
 def register_user(request):
 
     msg     = None
@@ -63,3 +60,28 @@ def register_user(request):
         form = SignUpForm()
 
     return render(request, "accounts/register.html", {"form": form, "msg" : msg, "success" : success })
+
+
+
+
+
+
+
+def profile(request):
+    print("----------oo---------")
+    context = {}
+    context['segment'] = 'profile'
+    return render(request, "accounts/profile.html", context)
+
+
+
+
+
+
+
+
+
+
+
+
+# End
