@@ -60,103 +60,33 @@
 
 
         <div class="row">
+          {% for Rom in devices %}
 
-          <div class="col-sm-3">
-            <a href="/nodes_detail.html">
-              <div class="card bg-c-blue order-card">
-                  <div class="card-body">
-                      <p class="m-b-0"> Node name <span class="float-right"> آنلاین <i style="font-size:10px;" class="fas fa-circle text-success"></i> </span></p>
-                      <div class="row">
-                        <div class="col-md-7">
-                          <p>
-                            <small>
-                               &nbsp;&nbsp;<span class="text-muted">Sensors:</span> 12
-                               <br>
-                               &nbsp;&nbsp;<span class="text-muted">UUID:</span> 7C465F2Z2CCF
-                             </small>
-                           </p>
+            <div class="col-sm-3">
+              <a href="/nodes_detail.html">
+                <div class="card bg-c-blue order-card">
+                    <div class="card-body">
+                        <p class="m-b-0"> {{ Rom.name }} <span class="float-right"> آنلاین <i style="font-size:10px;" class="fas fa-circle text-success"></i> </span></p>
+                        <div class="row">
+                          <div class="col-md-7">
+                            <p>
+                              <small>
+                                 &nbsp;&nbsp;<span class="text-muted">Sensors:</span> 3
+                                 <br>
+                                 &nbsp;&nbsp;<span class="text-muted">UUID:</span> {{ Rom.UUID }}
+                               </small>
+                             </p>
+                          </div>
+                          <div class="col-md-5">
+                            <img src="/static/assets/images/user/device.png" width="60px" class="img-radius float-right" alt="User-Profile-Image">
+                          </div>
                         </div>
-                        <div class="col-md-5">
-                          <img src="/static/assets/images/user/device.png" width="60px" class="img-radius float-right" alt="User-Profile-Image">
-                        </div>
-                      </div>
-                  </div>
-              </div>
-            </a>
-          </div>
+                    </div>
+                </div>
+              </a>
+            </div>
 
-          <div class="col-sm-3">
-            <a href="/nodes_detail.html">
-              <div class="card bg-c-blue order-card">
-                  <div class="card-body">
-                      <p class="m-b-0"> Node name <span class="float-right"> آنلاین <i style="font-size:10px;" class="fas fa-circle text-success"></i> </span></p>
-                      <div class="row">
-                        <div class="col-md-7">
-                          <p>
-                            <small>
-                               &nbsp;&nbsp;<span class="text-muted">Sensors:</span> 12
-                               <br>
-                               &nbsp;&nbsp;<span class="text-muted">UUID:</span> 7C465F2Z2CCF
-                             </small>
-                           </p>
-                        </div>
-                        <div class="col-md-5">
-                          <img src="/static/assets/images/user/device.png" width="60px" class="img-radius float-right" alt="User-Profile-Image">
-                        </div>
-                      </div>
-                  </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <a href="/nodes_detail.html">
-              <div class="card bg-c-blue order-card">
-                  <div class="card-body">
-                      <p class="m-b-0"> Node name <span class="float-right"> آفلاین <i style="font-size:10px;" class="fas fa-circle text-danger"></i> </span></p>
-                      <div class="row">
-                        <div class="col-md-7">
-                          <p>
-                            <small>
-                               &nbsp;&nbsp;<span class="text-muted">Sensors:</span> 12
-                               <br>
-                               &nbsp;&nbsp;<span class="text-muted">UUID:</span> 7C465F2Z2CCF
-                             </small>
-                           </p>
-                        </div>
-                        <div class="col-md-5">
-                          <img src="/static/assets/images/user/device.png" width="60px" class="img-radius float-right" alt="User-Profile-Image">
-                        </div>
-                      </div>
-                  </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <a href="/nodes_detail.html">
-              <div class="card bg-c-blue order-card">
-                  <div class="card-body">
-                      <p class="m-b-0"> Node name <span class="float-right"> آفلاین <i style="font-size:10px;" class="fas fa-circle text-danger"></i> </span></p>
-                      <div class="row">
-                        <div class="col-md-7">
-                          <p>
-                            <small>
-                               &nbsp;&nbsp;<span class="text-muted">Sensors:</span> 12
-                               <br>
-                               &nbsp;&nbsp;<span class="text-muted">UUID:</span> 7C465F2Z2CCF
-                             </small>
-                           </p>
-                        </div>
-                        <div class="col-md-5">
-                          <img src="/static/assets/images/user/device.png" width="60px" class="img-radius float-right" alt="User-Profile-Image">
-                        </div>
-                      </div>
-                  </div>
-              </div>
-            </a>
-          </div>
-
+          {% endfor %}
        </div>
 
 
