@@ -109,7 +109,10 @@ def sensors(request):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
 
-    context = {'devices':devices}
+    device_node_id = models.Rom.objects.filter(UUID__in=uuid, family_id='01').values('node_id')
+    sensor_temp = models.Temp12.objects.filter(UUID__in=device_node_id)
+
+    context = {'devices':devices, 'sensor_temp':sensor_temp}
     context['segment'] = 'sensors'
     html_template = loader.get_template( 'sensors.html' )
     return HttpResponse(html_template.render(context, request))

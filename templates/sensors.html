@@ -31,6 +31,18 @@
           <!-- [ breadcrumb ] end -->
 
 
+<hr>
+
+{% for Temp12 in sensor_temp %}
+
+  {{ Temp12.UUID }} {{ Temp12.temp }} <br>
+
+{% endfor %}
+
+
+
+<hr><br>
+
 
           <div class="container">
         		<div class="row">
