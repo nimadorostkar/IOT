@@ -61,16 +61,19 @@ def profile(request):
 
 @login_required(login_url="/login/")
 def nodes(request):
-    user_uuid_Form = User_uuidForm(request.POST, instance=request.user)
+    uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
+    devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
 
+    print(devices)
+
+    user_uuid_Form = User_uuidForm(request.POST, instance=request.user)
     if request.method == 'POST':
         if user_uuid_Form.is_valid():
             obj = User_uuid()
             obj.UUID = user_uuid_Form.cleaned_data['UUID']
             obj.user = user_uuid_Form.created_by=request.user
             obj.save()
-
-            context = {'user_uuid_Form': user_uuid_Form}
+            context = {'user_uuid_Form': user_uuid_Form, 'devices':devices}
             return render(request, 'nodes.html', context)
         else:
             return HttpResponse("Form Failed to Validate")
