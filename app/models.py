@@ -140,7 +140,7 @@ class User_uuid(models.Model):
 
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
 
 

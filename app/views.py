@@ -68,13 +68,15 @@ def nodes(request):
             obj.UUID = add_order_form.cleaned_data['uuid']
             obj.user = request.user
             obj.save()
-            return redirect(obj.get_absolute_url())
+
+            context = {'user_uuid_Form':user_uuid_Form}
+            context['segment'] = 'nodes'
+            return render(request, 'nodes.html', context)
     else:
         user_uuid_Form = User_uuidForm(request.POST)
 
     context = {'user_uuid_Form':user_uuid_Form}
     context['segment'] = 'nodes'
-
     html_template = loader.get_template( 'nodes.html' )
     return HttpResponse(html_template.render(context, request))
 

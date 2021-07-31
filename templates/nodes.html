@@ -6,6 +6,9 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
+{% load bootstrap %}
+
+
 
     <!-- [ Main Content ] start -->
     <section class="pcoded-main-container">
@@ -35,7 +38,9 @@
               <a href="#!" class="badge badge-secondary collapsible"> افزودن نود  <i class="feather icon-box"></i> </a>
               <div class="collapsiblecontent">
 
-                   <form class="form-inline">
+                   <form action="/nodes" method="post" class="form-inline">
+                     {% csrf_token %}
+                     {{ ticket_form|bootstrap }}
                        <div class="form-group mx-sm-3 mb-2">
                            <input name="uuid" type="text" class="form-control" placeholder=" UUID ">
                        </div>
