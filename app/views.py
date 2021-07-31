@@ -19,6 +19,20 @@ def index(request):
 
 
 
+
+
+
+def profile(request):
+    print("-------------------")
+    context = {}
+    context['segment'] = 'profile'
+    return render(request, "accounts/profile.html", context)
+
+
+
+
+
+
 @login_required(login_url="/login/")
 def pages(request):
     context = {}
