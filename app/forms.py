@@ -30,8 +30,8 @@ class User_uuidForm(forms.ModelForm):
 		fields = ['UUID']
 
 
+
 #------------------------------------------------------------------------------
-class Device_name_Form(forms.ModelForm):
-	class Meta:
-		model = Rom
-		fields = ['name']
+class Device_name_Form(forms.Form):
+	Device_UUID = forms.CharField(max_length=20)
+	Device_name = forms.CharField(max_length=20)

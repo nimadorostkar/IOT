@@ -68,13 +68,16 @@ def profile(request):
 def nodes(request):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
-    device_name_Form = Device_name_Form(request.POST, instance=request.user)
+    device_name_Form = Device_name_Form(request.POST)
     user_uuid_Form = User_uuidForm(request.POST, instance=request.user)
 
     if request.method == 'POST':
+
         if device_name_Form.is_valid():
-            name = device_name_Form.cleaned_data['name']
-            device_name_Form.save()
+            uuid = device_name_Form.cleaned_data['Device_UUID']
+            obj = get_object_or_404(models.Rom, UUID=uuid, family_id='01')
+            obj.name = device_name_Form.cleaned_data['Device_name']
+            obj.save()
             context = {'user_uuid_Form': user_uuid_Form, 'devices':devices, 'device_name_Form':device_name_Form}
             return render(request, 'nodes.html', context)
         else:
