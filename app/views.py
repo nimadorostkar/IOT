@@ -104,6 +104,20 @@ def nodes(request):
 
 
 
+@login_required(login_url="/login/")
+def sensors(request):
+    uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
+    devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
+
+    context = {'devices':devices}
+    context['segment'] = 'sensors'
+    html_template = loader.get_template( 'sensors.html' )
+    return HttpResponse(html_template.render(context, request))
+
+
+
+
+
 
 
 @login_required(login_url="/login/")

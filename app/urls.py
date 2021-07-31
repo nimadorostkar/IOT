@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('profile', views.profile, name='profile'),
     path('nodes', views.nodes, name='nodes'),
+    path('sensors', views.sensors, name='sensors'),
 
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
