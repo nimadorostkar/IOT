@@ -4,8 +4,8 @@ from django.template import loader
 from django.http import HttpResponse
 from django import template
 from . import models
-from .models import Profile
-from .forms import ProfileForm, UserForm
+from .models import Profile, User_uuid
+from .forms import ProfileForm, UserForm, User_uuidForm
 
 
 
@@ -54,6 +54,31 @@ def profile(request):
 
     html_template = loader.get_template( 'accounts/profile.html' )
     return HttpResponse(html_template.render(context, request))
+
+
+
+
+
+@login_required(login_url="/login/")
+def nodes(request):
+    user_uuid_Form = User_uuidForm(request.POST)
+    if request.method == 'POST':
+        if user_uuid_Form.is_valid():
+            obj = User_uuid()
+            obj.UUID = add_order_form.cleaned_data['uuid']
+            obj.user = request.user
+            obj.save()
+            return redirect(obj.get_absolute_url())
+    else:
+        user_uuid_Form = User_uuidForm(request.POST)
+
+    context = {'user_uuid_Form':user_uuid_Form}
+    context['segment'] = 'nodes'
+
+    html_template = loader.get_template( 'nodes.html' )
+    return HttpResponse(html_template.render(context, request))
+
+
 
 
 

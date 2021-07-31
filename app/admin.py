@@ -1,6 +1,6 @@
 from django.contrib import admin
 from . import models
-from .models import Rom, Node1, Temp12, Gps2, Sd1, Modem1, Profile
+from .models import Rom, Node1, Temp12, Gps2, Sd1, Modem1, Profile, User_uuid
 
 
 
@@ -10,10 +10,12 @@ from .models import Rom, Node1, Temp12, Gps2, Sd1, Modem1, Profile
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('user_name','phone','address', 'image_tag')
     search_fields = ['user_name', 'phone', 'address']
-
 admin.site.register(models.Profile, ProfileAdmin)
 
-
+#------------------------------------------------------------------------------
+class User_uuidAdmin(admin.ModelAdmin):
+    list_display = ('user', 'UUID')
+admin.site.register(models.User_uuid, User_uuidAdmin)
 
 #------------------------------------------------------------------------------
 class RomAdmin(admin.ModelAdmin):

@@ -47,7 +47,7 @@ class Profile(models.Model):
 
 #------------------------------------------------------------------------------
 class Rom(models.Model):
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=40, default='name...')
     UUID = models.CharField(max_length=20)
     family_id = models.CharField(max_length=20)
     node_id = models.CharField(max_length=20)
@@ -129,6 +129,18 @@ class Modem1(models.Model):
     def __str__(self):
         return self.UUID
 
+
+
+
+
+#------------------------------------------------------------------------------
+class User_uuid(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    UUID = models.CharField(max_length=20)
+
+
+    def __str__(self):
+        return self.user
 
 
 
