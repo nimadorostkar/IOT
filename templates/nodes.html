@@ -31,20 +31,22 @@
 
 
 
+          <div align="right" dir="rtl">
+              <a href="#!" class="badge badge-secondary collapsible"> افزودن نود  <i class="feather icon-box"></i> </a>
+              <div class="collapsiblecontent">
+
+                   <form class="form-inline">
+                       <div class="form-group mx-sm-3 mb-2">
+                           <input type="text" class="form-control" placeholder=" UUID ">
+                       </div>
+                       <button type="submit" class="btn  btn-primary mb-2"> ذخیره </button>
+                   </form>
 
 
-          <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-              <form class="form-inline">
-                  <div class="form-group mx-sm-3 mb-2">
-                      <input type="text" class="form-control" placeholder=" UUID... ">
-                  </div>
-                  <button type="submit" class="btn  btn-primary mb-2"> افزودن نود </button>
-              </form>
-            </div>
-          </div>
+              </div>
+           </div>
+
+
 
           <br>
 
@@ -52,7 +54,6 @@
 
         <div class="row">
 
-
           <div class="col-sm-3">
             <a href="/nodes_detail.html">
               <div class="card bg-c-blue order-card">
@@ -148,8 +149,6 @@
               </div>
             </a>
           </div>
-
-
 
        </div>
 
@@ -168,4 +167,23 @@
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        }
+    </script>
+
+{% endblock javascripts %}

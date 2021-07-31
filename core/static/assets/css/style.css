@@ -26524,11 +26524,11 @@ div.dtk-focus-alt table.dataTable tbody th.focus {
 }
 
 .collapsiblecontent {
-  padding: 0 18px;
+  padding-top:2%;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
+
 }
 
 
