@@ -47,7 +47,7 @@ class Profile(models.Model):
 
 #------------------------------------------------------------------------------
 class Rom(models.Model):
-    name = models.CharField(max_length=40, default='name...')
+    name = models.CharField(max_length=40, default='device name')
     UUID = models.CharField(max_length=20)
     family_id = models.CharField(max_length=20)
     node_id = models.CharField(max_length=20)
