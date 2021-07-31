@@ -67,20 +67,6 @@ def register_user(request):
 
 
 
-def profile(request):
-    print("----------oo---------")
-    context = {}
-    context['segment'] = 'profile'
-    return render(request, "accounts/profile.html", context)
-
-
-
-
-
-
-
-
-
 
 
 

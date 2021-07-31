@@ -19,6 +19,23 @@ def index(request):
 
 
 
+
+
+
+@login_required(login_url="/login/")
+def profile(request):
+
+    context = {}
+    context['segment'] = 'profile'
+
+    html_template = loader.get_template( 'accounts/profile.html' )
+    return HttpResponse(html_template.render(context, request))
+
+
+
+
+
+
 @login_required(login_url="/login/")
 def pages(request):
     context = {}
