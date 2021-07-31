@@ -47,17 +47,14 @@
            <div align="right" dir="rtl">
                <a href="#!" class="badge badge-secondary collapsible"> تغییر نام <i class="feather icon-box"></i> </a>
                <div class="collapsiblecontent">
-                    <form action="/nodes" method="post" class="form-inline">
+                   <form action="/nodes" method="post" class="form-inline">
                       {% csrf_token %}
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input name="UUID" type="text" class="form-control" placeholder=" UUID ">
-                        </div>
-                        <button type="submit" class="btn  btn-primary mb-2"> ذخیره </button>
-                    </form>
+                      <input name="Device_UUID" type="text" class="form-control" placeholder=" uuid ">
+                      <input name="Device_name" type="text" class="form-control" placeholder=" name ">
+                     <button type="submit" class="btn  btn-primary mb-2"> ذخیره </button>
+                   </form>
                </div>
             </div>
-
-
 
 
 
