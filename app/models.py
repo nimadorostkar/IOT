@@ -57,6 +57,9 @@ class Rom(models.Model):
     def __str__(self):
         return self.UUID
 
+    def get_absolute_url(self):
+        return reverse('app:nodes_detail',args=[self.id])
+
 
 
 #------------------------------------------------------------------------------
@@ -85,6 +88,10 @@ class Temp12(models.Model):
 
     def __str__(self):
         return self.UUID
+
+    class Meta:
+        verbose_name = " سنسور دما Temp12 "
+        verbose_name_plural = " سنسور های دما  Temp12 "
 
 
 

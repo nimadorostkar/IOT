@@ -9,6 +9,7 @@ from .forms import ProfileForm, UserForm, User_uuidForm, Device_name_Form
 
 
 
+#------------------------------------------------------------------------------
 @login_required(login_url="/login/")
 def index(request):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
@@ -23,6 +24,7 @@ def index(request):
 
 
 
+#------------------------------------------------------------------------------
 
 @login_required(login_url="/login/")
 def profile(request):
@@ -64,6 +66,8 @@ def profile(request):
 
 
 
+#------------------------------------------------------------------------------
+
 @login_required(login_url="/login/")
 def nodes(request):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
@@ -80,8 +84,6 @@ def nodes(request):
             obj.save()
             context = {'user_uuid_Form': user_uuid_Form, 'devices':devices, 'device_name_Form':device_name_Form}
             return render(request, 'nodes.html', context)
-        else:
-            return HttpResponse("User Device Name Form Failed to Validate")
 
         if user_uuid_Form.is_valid():
             obj = User_uuid()
@@ -90,8 +92,6 @@ def nodes(request):
             obj.save()
             context = {'user_uuid_Form': user_uuid_Form, 'devices':devices, 'device_name_Form':device_name_Form}
             return render(request, 'nodes.html', context)
-        else:
-            return HttpResponse("User Added_UUID Form Failed to Validate")
     else:
         user_uuid_Form = User_uuidForm(request.POST)
 
@@ -100,6 +100,22 @@ def nodes(request):
     html_template = loader.get_template( 'nodes.html' )
     return HttpResponse(html_template.render(context, request))
 
+
+
+
+@login_required(login_url="/login/")
+def nodes_detail(request, id):
+    uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
+    devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
+
+    node = get_object_or_404(models.Rom, id=id)
+
+    context = {'node':node, 'devices':devices}
+    context['segment'] = 'nodes_detail'
+    html_template = loader.get_template( 'nodes_detail.html' )
+    return HttpResponse(html_template.render(context, request))
+
+#------------------------------------------------------------------------------
 
 
 
@@ -123,6 +139,8 @@ def sensors(request):
 
 
 
+#------------------------------------------------------------------------------
+
 @login_required(login_url="/login/")
 def pages(request):
     context = {}
@@ -145,3 +163,10 @@ def pages(request):
 
         html_template = loader.get_template( 'page-500.html' )
         return HttpResponse(html_template.render(context, request))
+
+
+
+
+
+
+# End
