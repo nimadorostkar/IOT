@@ -110,12 +110,17 @@ def nodes_detail(request, id):
 
     node = get_object_or_404(models.Rom, id=id)
     sensors = models.Rom.objects.filter(node_id=node.node_id)
+    a=sensors.filter(family_id='28')
+    print(a)
+
+    temp12 = models.Temp12.objects.all()
 
 
     context = {
     'devices':devices,
     'node':node,
-    'sensors':sensors
+    'sensors':sensors,
+    'temp12':temp12
     }
     context['segment'] = 'nodes_detail'
     html_template = loader.get_template( 'nodes_detail.html' )
