@@ -38,7 +38,16 @@
 <br><hr>
 
 
-  {{ node.name }} - {{ node.UUID }}
+   <h3> {{ node.name }} - {{ node.UUID }} </h3>
+
+   <br>
+
+   {% for Temp12 in sensor_temp %}
+
+    Temp: {{ Temp12.UUID }} {{ Temp12.temp }} <br>
+
+   {% endfor %}
+
 
 
 
