@@ -33,17 +33,81 @@
           <!-- [ breadcrumb ] end -->
 
 
-
+      <div class="container">
+        <div class="row">
 
          {% for Rom in sensors %}
+
+             {% if Rom.family_id == "28" %}
+               <div class="col-sm-4">
+                     <div class="card bg-primary text-white">
+                         <div class="card-body bg-patern-white">
+                             <div class="row">
+                                 <div class="col-auto">
+                                   <img src="/static/assets/images/sensors/temp.png" width="25px">
+                                   <span>Temperature</span>
+                                 </div>
+                                 <div class="col text-right">
+                                     <span class="text-white"> 72° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
+                                     <span class="text-white"> 48° <i class="feather icon-arrow-down ml-1 text-danger"></i></span>
+                                     <span class="text-white"> 62° &nbsp;&nbsp;<span style="font-size: 20px;" class="text-warning">~</span> </span>
+                                 </div>
+                             </div>
+                             <div align="center">
+                               <a href="#!" class="badge badge-secondary collapsible">Extend <i class="feather icon-pie-chart"></i> </a>
+                               <div class="collapsiblecontent" style="background-color:#ffffff4f;">
+                                   <div class="text-dark" id="line-chart-temp"></div>
+                               </div>
+                             </div>
+                             <div class="row mt-3">
+                                 <div class="col">
+                                     <h3 class="m-0 text-white">
+                                       <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
+                                        {{ Rom. }}°
+                                     </h3>
+                                     <small class="ml-3"> 12 second ago </small>
+                                 </div>
+                                 <div class="col">
+                                     <a href="#"><h4 class="m-0 text-white text-right"> sensor name  </h4></a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+             {% endif %}
+
+
+         {% endfor %}
+
+        </div>
+      </div>
+
+
+<hr><br>
+
+         {% for Rom in sensors %}
+
+             {% if Rom.family_id == "28" %}
+               <span style="color:red;"> temp: </span>
+             {% endif %}
+
+             {% if Rom.family_id == "01" %}
+               <span style="color:red;"> node: </span>
+             {% endif %}
+
+             {% if Rom.family_id == "15" %}
+               <span style="color:red;"> gsm: </span>
+             {% endif %}
+
+             {% if Rom.family_id == "0A" %}
+               <span style="color:red;"> sd: </span>
+             {% endif %}
+
               <small class="text-muted">uuid:</small> {{ Rom.UUID }}
               <small class="text-muted">node id:</small> {{ Rom.node_id }}
               <small class="text-muted">family id:</small> {{ Rom.family_id }}
               <br>
-         {% endfor %}
-
-
-
+          {% endfor %}
 
 
 
