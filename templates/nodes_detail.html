@@ -7,9 +7,9 @@
 
 {% block content %}
 
-    <!-- [ Main Content ] start -->
-    <section class="pcoded-main-container">
-        <div class="pcoded-content">
+  <!-- [ Main Content ] start -->
+  <section class="pcoded-main-container">
+      <div class="pcoded-content">
 
 
           <!-- [ breadcrumb ] start -->
@@ -18,13 +18,13 @@
               <div class="row align-items-center">
                 <div class="col-md-12">
                   <div class="page-header-title">
-                    <h5 class="m-b-10"> all Nodes </h5>
+                    <h5 class="m-b-10" align="right" dir="rtl"> {{ node.name }} <small class="text-muted">{{ node.UUID }}</small> </h5>
                   </div>
                   <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#!"> Dashboard </a></li>
+                    <li class="breadcrumb-item"><a href="#!"> IOT </a></li>
                     <li class="breadcrumb-item"><a href="#!"> Nodes </a></li>
-                    <li class="breadcrumb-item"><a href="#!"> Nodes detail </a></li>
+                    <li class="breadcrumb-item"><a href="#!"> {{ node.name }} </a></li>
                   </ul>
                 </div>
               </div>
@@ -35,81 +35,22 @@
 
 
 
-<br><hr>
-
-
-   <h3> {{ node.name }} - {{ node.UUID }} </h3>
-
-   <br>
-
-   {% for Temp12 in sensor_temp %}
-
-    Temp: {{ Temp12.UUID }} {{ Temp12.temp }} <br>
-
-   {% endfor %}
-
-
-
-
-<br><hr>
-
-                  <!-- [ Main Content ] start -->
-                  <div class="row" dir="rtl" align="right">
-                      <!-- [ stiped-table ] start -->
-                      <div class="col-xl-12">
-                          <div class="card">
-                              <div class="card-header">
-                                  <h5> Node detail </h5>
-                                  <span class="d-block m-t-5"> Node Node Node Node Node Node Node Node Node </span>
-                              </div>
-                              <div class="card-body table-border-style">
-                                  <div class="table-responsive">
-                                      <table class="table table-striped">
-                                          <thead>
-                                              <tr>
-                                                  <th>آی دی</th>
-                                                  <th>وضعیت</th>
-                                                  <th>نام</th>
-                                                  <th>تاریخ</th>
-                                              </tr>
-                                          </thead>
-                                          <tbody>
-                                              <tr>
-                                                  <td>1</td>
-                                                  <td>Mark</td>
-                                                  <td>Otto</td>
-                                                  <td>@mdo</td>
-                                              </tr>
-                                              <tr>
-                                                  <td>2</td>
-                                                  <td>Jacob</td>
-                                                  <td>Thornton</td>
-                                                  <td>@fat</td>
-                                              </tr>
-                                              <tr>
-                                                  <td>3</td>
-                                                  <td>Larry</td>
-                                                  <td>the Bird</td>
-                                                  <td>@twitter</td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- [ stiped-table ] end -->
-                  </div>
-                  <!-- [ Main Content ] end -->
+         {% for Rom in sensors %}
+              <small class="text-muted">uuid:</small> {{ Rom.UUID }}
+              <small class="text-muted">node id:</small> {{ Rom.node_id }}
+              <small class="text-muted">family id:</small> {{ Rom.family_id }}
+              <br>
+         {% endfor %}
 
 
 
 
 
 
-              </div>
-          </section>
-          <!-- [ Main Content ] end -->
+
+        </div>
+    </section>
+    <!-- [ Main Content ] end -->
 
 {% endblock content %}
 
