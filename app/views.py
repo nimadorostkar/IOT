@@ -115,7 +115,6 @@ def nodes_detail(request, id):
     temp12 = models.Temp12.objects.filter(UUID__in=sensors_uuid)
     print(temp12)
 
-
     context = {
     'devices':devices,
     'node':node,
