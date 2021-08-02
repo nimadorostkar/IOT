@@ -6,7 +6,7 @@ from django import template
 from . import models
 from .models import Profile, User_uuid, Rom
 from .forms import ProfileForm, UserForm, User_uuidForm, Device_name_Form
-from datetime import datetime
+from django.db.models import Count
 
 
 #------------------------------------------------------------------------------
@@ -113,7 +113,6 @@ def nodes_detail(request, id):
     sensors_uuid = models.Rom.objects.filter(node_id=node.node_id).values('UUID')
 
     temp12 = models.Temp12.objects.filter(UUID__in=sensors_uuid)
-    print(temp12)
 
     context = {
     'devices':devices,
