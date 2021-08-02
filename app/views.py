@@ -111,7 +111,7 @@ def nodes_detail(request, id):
     node = get_object_or_404(models.Rom, id=id)
     sensors = models.Rom.objects.filter(node_id=node.node_id)
 
-    temp12 = models.Temp12.objects.all()
+    temp12 = models.Temp12.objects.all() 
 
 
     context = {
