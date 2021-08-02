@@ -6,7 +6,7 @@ from django import template
 from . import models
 from .models import Profile, User_uuid, Rom
 from .forms import ProfileForm, UserForm, User_uuidForm, Device_name_Form
-
+from datetime import datetime
 
 
 #------------------------------------------------------------------------------
@@ -110,8 +110,10 @@ def nodes_detail(request, id):
 
     node = get_object_or_404(models.Rom, id=id)
     sensors = models.Rom.objects.filter(node_id=node.node_id)
+    sensors_uuid = models.Rom.objects.filter(node_id=node.node_id).values('UUID')
 
-    temp12 = models.Temp12.objects.all() 
+    temp12 = models.Temp12.objects.filter(UUID__in=sensors_uuid)
+    print(temp12)
 
 
     context = {

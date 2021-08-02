@@ -7,6 +7,8 @@
 
 {% block content %}
 
+
+
   <!-- [ Main Content ] start -->
   <section class="pcoded-main-container">
       <div class="pcoded-content">
@@ -37,7 +39,6 @@
         <div class="row">
 
          {% for Rom in sensors %}
-
              {% if Rom.family_id == "28" %}
                <div class="col-sm-4">
                      <div class="card bg-primary text-white">
@@ -45,7 +46,7 @@
                              <div class="row">
                                  <div class="col-auto">
                                    <img src="/static/assets/images/sensors/temp.png" width="25px">
-                                   <span>Temperature</span>
+                                   <span>Temperature</span>  {{ Rom.UUID }}
                                  </div>
                                  <div class="col text-right">
                                      <span class="text-white"> 72° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
@@ -61,14 +62,12 @@
                              </div>
                              <div class="row mt-3">
                                  <div class="col">
-                                     <small class="m-0 text-white">
                                        <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
-                                         {% for Temp12 in temp12 %}
-                                            {% if Rom.UUID == Temp12.UUID %}
-                                              <br> {{ Temp12.temp }}°  {{ Temp12.UUID }}
-                                            {% endif %}
-                                         {% endfor %}
-                                     </small>
+                                       {% for Temp12 in temp12 %}
+                                          {% if Rom.UUID == Temp12.UUID %}
+                                            <br>  {{ Temp12.created_on }} - {{ Temp12.temp }}° 
+                                          {% endif %}
+                                       {% endfor %}
                                      <small class="ml-3"> 12 second ago </small>
                                  </div>
                                  <div class="col">
@@ -79,8 +78,6 @@
                      </div>
                 </div>
              {% endif %}
-
-
          {% endfor %}
 
         </div>
@@ -123,4 +120,7 @@
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+
+
+{% endblock javascripts %}
