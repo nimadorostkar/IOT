@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Sample Page {% endblock %}
+{% block title %} پروفایل {% endblock %}
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -32,15 +32,17 @@
 
 			<div class="row">
 
-				<div class="col-md-3">
-					<div align="right" dir="rtl" style=" padding-right:5%; padding-left:5%; padding-top:5%; background-color:#fff; padding:20px25px; border-radius:5px;">
-                <img class="avatar" src="{{ request.user.profile.user_photo.url }}" >
-								<img class="avatar" src="{{ user.profile.user_photo.url }}" >
+				<div class="col-md-4">
+					<div align="center" dir="rtl" style=" padding-right:5%; padding-left:5%; padding-top:5%; background-color:#fff; padding:20px25px; border-radius:5px;">
+                <img class="avatar" src="{{ request.user.profile.user_photo.url }}" style="max-width:100%;">
+								<br><br>
+								<h4 class="text-muted"> {{ request.user.first_name }} {{ request.user.last_name }} </h4>
+								<br>
 					</div>
 				</div>
 
-				<div class="col-md-9">
-					<div align="right" dir="rtl" style="margin-right:10%; margin-left:10%; padding-right:5%; padding-left:5%; padding-top:5%; background-color:#fff; padding:20px25px; border-radius:5px;">
+				<div class="col-md-8">
+					<div align="right" dir="rtl" style="margin-right:5%; margin-left:5%; padding-right:5%; padding-left:5%; padding-top:5%; background-color:#fff; padding:20px25px; border-radius:5px;">
 			         <form method="post" enctype="multipart/form-data">
 			           {% csrf_token %}
 			          <div class="row">
@@ -70,6 +72,14 @@
 			              <div class="form-group">
 			                <label> ایمیل </label>
 			                <input name="email" type="text" class="form-control" placeholder="email" value="{{ request.user.email }}">
+			              </div>
+			            </div>
+			          </div>
+								<div class="row">
+			            <div class="col-md-12 pr-md-1">
+			              <div class="form-group">
+			                <label> آدرس </label>
+			                <input name="address" type="text" class="form-control" placeholder="address" value="{{ request.user.address }}">
 			              </div>
 			            </div>
 			          </div>

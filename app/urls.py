@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import path
 from app import views
 
 app_name='app'
@@ -13,8 +13,5 @@ urlpatterns = [
     path('nodes_detail/<int:id>/',views.nodes_detail,name='nodes_detail'),
 
     path('sensors', views.sensors, name='sensors'),
-
-    # Matches any html file
-    re_path(r'^.*\.*', views.pages, name='pages'),
 
 ]
