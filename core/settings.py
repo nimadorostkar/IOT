@@ -117,12 +117,10 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = ( os.path.join(CORE_DIR, 'core/static'),)
 
-MEDIA_ROOT= os.path.join(CORE_DIR, 'core/media')
-MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Directory where uploaded media is saved.
+MEDIA_URL = '/media/' # Public URL at the browser
 
 #############################################################
-
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
