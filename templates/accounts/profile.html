@@ -32,7 +32,7 @@
 
 			<div class="row">
 
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div align="center" dir="rtl" style=" padding-right:5%; padding-left:5%; padding-top:5%; background-color:#fff; padding:20px25px; border-radius:5px;">
                 <img class="avatar" src="{{ request.user.profile.user_photo.url }}" style="max-width:100%;">
 								<br><br>
@@ -41,7 +41,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-8">
+				<div class="col-md-9">
 					<div align="right" dir="rtl" style="margin-right:5%; margin-left:5%; padding-right:5%; padding-left:5%; padding-top:5%; background-color:#fff; padding:20px25px; border-radius:5px;">
 			         <form method="post" enctype="multipart/form-data">
 			           {% csrf_token %}
@@ -79,7 +79,7 @@
 			            <div class="col-md-12 pr-md-1">
 			              <div class="form-group">
 			                <label> آدرس </label>
-			                <input name="address" type="text" class="form-control" placeholder="address" value="{{ request.user.address }}">
+			                <input name="address" type="text" class="form-control" placeholder="address" value="{{ request.user.profile.address }}">
 			              </div>
 			            </div>
 			          </div>
