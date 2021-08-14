@@ -117,16 +117,13 @@ def nodes_detail(request, id):
     temp_uuid = models.Temp12.objects.filter(UUID__in=sensors_uuid).values('UUID').distinct()
 
 
-    #for a in temp_uuid.all():
+    #i = 0
+    #while i < len(temp_uuid):
+        #z=models.Temp12.objects.filter(UUID=temp_uuid[i]).values('temp').latest('created_on')
+        #print(z)
+        #i = i + 1
 
-    z=models.Temp12.objects.filter(UUID__in=temp_uuid).values('temp').latest('created_on')
-    print(z)
-
-        #a=models.Temp12.objects.filter(UUID=temp12.UUID).order_by('-created_on')
-
-
-    #last_temp = models.Temp12.objects.filter(UUID__in=temp_uuid).order_by('-created_on').values('UUID')
-
+    print(temp_uuid[0])
 
 
     context = {
