@@ -41,14 +41,10 @@ python manage.py migrate --run-syncdb
 
 <br>
 
-
-![example](https://github.com/nimadorostkar/production-management/blob/master/screenshot/Screen%20Shot%201400-05-03%20at%2002.45.02.png)
-![example](https://github.com/nimadorostkar/production-management/blob/master/screenshot/Screen%20Shot%201400-05-03%20at%2002.44.39.png)
-![example](https://github.com/nimadorostkar/production-management/blob/master/screenshot/Screen%20Shot%201400-05-03%20at%2002.44.22.png)
-![example](https://github.com/nimadorostkar/production-management/blob/master/screenshot/Screen%20Shot%201400-05-03%20at%2002.45.13.png)
-![example](https://github.com/nimadorostkar/production-management/blob/master/screenshot/Screen%20Shot%201400-05-03%20at%2002.43.50.png)
-![example](https://github.com/nimadorostkar/production-management/blob/master/screenshot/Screen%20Shot%201400-05-03%20at%2002.43.35.png)
-
+![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.58.06.png)
+![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.57.53.png)
+![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.58.47.png)
+![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.59.21.png)
 
 <br>
 
