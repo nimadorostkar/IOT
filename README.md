@@ -38,10 +38,11 @@ python manage.py migrate --run-syncdb
 
 ```
 
- 
+
 <br>
 
 ![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.58.06.png)
+![example]( https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-25%20at%2000.10.34.png)
 ![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.57.53.png)
 ![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.58.47.png)
 ![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.59.21.png)
