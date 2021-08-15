@@ -38,7 +38,7 @@ python manage.py migrate --run-syncdb
 
 ```
 
-
+ 
 <br>
 
 ![example](https://github.com/nimadorostkar/IOT/blob/master/screenshots/Screen%20Shot%201400-05-24%20at%2023.58.06.png)
