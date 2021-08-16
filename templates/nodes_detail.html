@@ -46,7 +46,7 @@
                              <div class="row">
                                  <div class="col-auto">
                                    <img src="/static/assets/images/sensors/temp.png" width="25px">
-                                   <span>Temperature</span>  {{ Rom.UUID }}
+                                   <span>Temperature</span>
                                  </div>
                                  <div class="col text-right">
                                      <span class="text-white"> 72° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
@@ -62,15 +62,18 @@
                              </div>
                              <div class="row mt-3">
                                  <div class="col">
-                                       <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
-                                       {% for Temp12 in temp12 %}
-                                          {% if Rom.UUID == Temp12.UUID %}
-                                            <br>{{ Temp12.UUID}} - {{ Temp12.temp }}°
-                                          {% endif %}
-                                       {% endfor %}
-                                     <small class="ml-3"> 12 second ago </small>
+                                   <h3 class="m-0 text-white">
+                                     <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
+                                     {% for Temp12 in last_temp %}
+                                        {% if Rom.UUID == Temp12.UUID %}
+                                          {{ Temp12.temp }}°
+                                        {% endif %}
+                                     {% endfor %}
+                                   </h3>
+                                   <small class="ml-3"> 12 second ago </small>
                                  </div>
-                                 <div class="col">
+                                 <div class="col" align="right">
+                                     <small> {{ Rom.UUID }} </small>
                                      <a href="#"><h4 class="m-0 text-white text-right"> sensor name  </h4></a>
                                  </div>
                              </div>
