@@ -6,7 +6,10 @@ from django import template
 from . import models
 from .models import Profile, User_uuid, Rom
 from .forms import ProfileForm, UserForm, User_uuidForm, Device_name_Form
-from django.db.models import Count
+from django.db.models import Count, Max, Min, Avg
+
+
+
 
 
 #------------------------------------------------------------------------------
@@ -123,6 +126,19 @@ def nodes_detail(request, id):
         Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values('UUID', 'temp').latest('created_on')
         last_temp.append(Temp12_value)
         i = i + 1
+
+
+
+
+
+    #max = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Max('temp'))
+    #min = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Min('temp'))
+    #avg = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Avg('temp'))
+    #print(max)
+    #print(min)
+    #print(avg)
+
+
 
     context = {
     'devices':devices,
