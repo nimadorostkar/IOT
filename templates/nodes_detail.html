@@ -65,7 +65,7 @@
                                        <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
                                        {% for Temp12 in temp12 %}
                                           {% if Rom.UUID == Temp12.UUID %}
-                                            <br> <!-- {{ Temp12.created_on|date:'YmdHms' }} --> {{ Temp12.UUID}} - {{ Temp12.temp }}°
+                                            <br>{{ Temp12.UUID}} - {{ Temp12.temp }}°
                                           {% endif %}
                                        {% endfor %}
                                      <small class="ml-3"> 12 second ago </small>
