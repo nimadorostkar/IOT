@@ -127,17 +127,13 @@ def nodes_detail(request, id):
         i+=1
 
 
-    j = 0
-    temp_datas = []
-    while j < len(temp_just_uuid):
-        max = models.Temp12.objects.filter(UUID=temp_just_uuid[j]).aggregate(Max('temp'))
-        temp_datas.append(max)
-        j+=1
-
-    #print(temp_datas)
 
 
-    ss =  [ { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' }, { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' } ]
+    ss = [
+        { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' },
+        { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' }
+    ]
+    print(ss)
 
 
 
@@ -156,7 +152,6 @@ def nodes_detail(request, id):
     'sensors':sensors,
     'temp12':temp12,
     'last_temp':last_temp,
-    'temp_datas':temp_datas,
     'ss':ss
     }
     context['segment'] = 'nodes_detail'
