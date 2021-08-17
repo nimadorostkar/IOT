@@ -11,7 +11,6 @@ from django.db.models import Count, Max, Min, Avg
 
 
 
-
 #------------------------------------------------------------------------------
 @login_required(login_url="/login/")
 def index(request):
@@ -125,20 +124,20 @@ def nodes_detail(request, id):
     while i < len(temp_just_uuid):
         Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values('UUID', 'temp').latest('created_on')
         last_temp.append(Temp12_value)
-        i = i + 1
+        i+=1
 
 
     j = 0
     temp_datas = []
     while j < len(temp_just_uuid):
         max = models.Temp12.objects.filter(UUID=temp_just_uuid[j]).aggregate(Max('temp'))
-        item=[ temp_just_uuid[j], max ]
-        temp_datas.append(item)
-        j += 1
+        temp_datas.append(max)
+        j+=1
 
-    print(temp_datas)
+    #print(temp_datas)
 
 
+    ss =  [ { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' }, { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' } ]
 
 
 
@@ -157,7 +156,8 @@ def nodes_detail(request, id):
     'sensors':sensors,
     'temp12':temp12,
     'last_temp':last_temp,
-    'temp_datas':temp_datas
+    'temp_datas':temp_datas,
+    'ss':ss
     }
     context['segment'] = 'nodes_detail'
     html_template = loader.get_template( 'nodes_detail.html' )
