@@ -119,14 +119,19 @@ def nodes_detail(request, id):
     temp_uuid = models.Temp12.objects.filter(UUID__in=sensors_uuid).values('UUID').distinct()
     temp_just_uuid=list(temp_uuid.values_list('UUID', flat=True))
 
-    i = 0
-    last_temp = []
+    #i = 0
+    #last_temp = []
+    #while i < len(temp_just_uuid):
+        #Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values('UUID', 'temp').latest('created_on')
+        #last_temp.append(Temp12_value)
+        #i+=1
+
+    i=0
+    temp_data = []
     while i < len(temp_just_uuid):
         Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values('UUID', 'temp').latest('created_on')
-        last_temp.append(Temp12_value)
+        temp_data.append(Temp12_value)
         i+=1
-
-
 
 
     ss = [
@@ -134,7 +139,12 @@ def nodes_detail(request, id):
         { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' }
     ]
 
+    zz = { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60' }
+    ee = {'min_temp':'34', 'avg_temp':'48'}
+    zz.append(ee)
 
+
+    print(zz)
 
 
 
@@ -152,7 +162,7 @@ def nodes_detail(request, id):
     'node':node,
     'sensors':sensors,
     'temp12':temp12,
-    'last_temp':last_temp,
+    #'last_temp':last_temp,
     'ss':ss
     }
     context['segment'] = 'nodes_detail'
