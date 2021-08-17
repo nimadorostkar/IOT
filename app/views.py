@@ -128,6 +128,17 @@ def nodes_detail(request, id):
         i = i + 1
 
 
+    j = 0
+    temp_datas = []
+    while j < len(temp_just_uuid):
+        max = models.Temp12.objects.filter(UUID=temp_just_uuid[j]).aggregate(Max('temp'))
+        item=[ temp_just_uuid[j], max ]
+        temp_datas.append(item)
+        j += 1
+
+    print(temp_datas)
+
+
 
 
 
@@ -145,7 +156,8 @@ def nodes_detail(request, id):
     'node':node,
     'sensors':sensors,
     'temp12':temp12,
-    'last_temp':last_temp
+    'last_temp':last_temp,
+    'temp_datas':temp_datas
     }
     context['segment'] = 'nodes_detail'
     html_template = loader.get_template( 'nodes_detail.html' )
