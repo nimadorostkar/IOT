@@ -133,7 +133,8 @@ def nodes_detail(request, id):
         { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' },
         { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' }
     ]
-    print(ss)
+
+
 
 
 
