@@ -127,24 +127,17 @@ def nodes_detail(request, id):
         #i+=1
 
     i=0
-    temp_data = []
     while i < len(temp_just_uuid):
-        Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values('UUID', 'temp').latest('created_on')
-        temp_data.append(Temp12_value)
+        Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True).latest('created_on')
+
+        temp_data = [ { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' } ]
         i+=1
 
 
-    ss = [
-        { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' },
-        { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' }
-    ]
-
-    zz = { 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60' }
-    ee = {'min_temp':'34', 'avg_temp':'48'}
-    zz.append(ee)
-
-
-    print(zz)
+    #ss = [
+        #{ 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' },
+        #{ 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' }
+    #]
 
 
 
@@ -156,6 +149,11 @@ def nodes_detail(request, id):
     #print(avg)
 
 
+    max = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Max('temp'))
+    print(max)
+
+
+
 
     context = {
     'devices':devices,
@@ -163,7 +161,7 @@ def nodes_detail(request, id):
     'sensors':sensors,
     'temp12':temp12,
     #'last_temp':last_temp,
-    'ss':ss
+    #'ss':ss
     }
     context['segment'] = 'nodes_detail'
     html_template = loader.get_template( 'nodes_detail.html' )
