@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'bootstrapform',
     'authentication',
+    'django.contrib.humanize',
     'app'  # Enable the inner app
 ]
 

@@ -6,7 +6,7 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
+{% load humanize %}
 
 
   <!-- [ Main Content ] start -->
@@ -53,7 +53,7 @@
                                  <div class="col text-right">
                                      <span class="text-white"> {{ Temp12.max_temp }}° <i class="feather icon-arrow-up ml-1 text-success"></i></span>
                                      <span class="text-white"> {{ Temp12.min_temp }}° <i class="feather icon-arrow-down ml-1 text-danger"></i></span>
-                                     <span class="text-white"> {{ Temp12.avg_temp }}° &nbsp;&nbsp;<span style="font-size: 20px;" class="text-warning">~</span> </span>
+                                     <span class="text-white"> {{ Temp12.avg_temp|floatformat:1 }}° &nbsp;&nbsp;<span style="font-size: 20px;" class="text-warning">~</span> </span>
                                  </div>
                              </div>
                              <div align="center">
@@ -68,7 +68,7 @@
                                      <div class="spinner-grow text-success" role="status"> <span class="sr-only">Loading...</span> </div>
                                         {{ Temp12.last_temp }}°
                                    </h3>
-                                   <small class="ml-3"> 12 second ago </small>
+                                   <small class="ml-3"> {{ Temp12.last_update|naturaltime }} </small>
                                  </div>
                                  <div class="col" align="right">
                                      <small> {{ Rom.UUID }} </small>
