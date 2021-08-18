@@ -150,7 +150,7 @@ def nodes_detail(request, id):
 
 
     max = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Max('temp'))
-    print(max)
+    print(max) 
 
 
 
