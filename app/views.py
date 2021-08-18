@@ -119,39 +119,18 @@ def nodes_detail(request, id):
     temp_uuid = models.Temp12.objects.filter(UUID__in=sensors_uuid).values('UUID').distinct()
     temp_just_uuid=list(temp_uuid.values_list('UUID', flat=True))
 
-    #i = 0
-    #last_temp = []
-    #while i < len(temp_just_uuid):
-        #Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values('UUID', 'temp').latest('created_on')
-        #last_temp.append(Temp12_value)
-        #i+=1
+
 
     i=0
+    temp_data =[]
     while i < len(temp_just_uuid):
         Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True).latest('created_on')
-
-        temp_data = [ { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' } ]
+        max = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).aggregate(Max('temp'))['temp__max']
+        min = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).aggregate(Min('temp'))['temp__min']
+        avg = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).aggregate(Avg('temp'))['temp__avg']
+        data_feeding =  { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':max, 'min_temp':min, 'avg_temp':avg }
+        temp_data.append(data_feeding)
         i+=1
-
-
-    #ss = [
-        #{ 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' },
-        #{ 'UUID':'FC412F2B2CBB', 'last_temp':'45', 'max_temp':'60', 'min_temp':'34', 'avg_temp':'48' }
-    #]
-
-
-
-    #max = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Max('temp'))
-    #min = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Min('temp'))
-    #avg = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Avg('temp'))
-    #print(max)
-    #print(min)
-    #print(avg)
-
-
-    max = models.Temp12.objects.filter(UUID=temp_just_uuid[0]).aggregate(Max('temp'))
-    print(max) 
-
 
 
 
@@ -160,8 +139,7 @@ def nodes_detail(request, id):
     'node':node,
     'sensors':sensors,
     'temp12':temp12,
-    #'last_temp':last_temp,
-    #'ss':ss
+    'temp_data':temp_data
     }
     context['segment'] = 'nodes_detail'
     html_template = loader.get_template( 'nodes_detail.html' )
