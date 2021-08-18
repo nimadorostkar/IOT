@@ -8,7 +8,7 @@ from .models import Profile, User_uuid, Rom
 from .forms import ProfileForm, UserForm, User_uuidForm, Device_name_Form
 from django.db.models import Count, Max, Min, Avg
 
-
+ 
 
 
 #------------------------------------------------------------------------------

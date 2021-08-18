@@ -26,7 +26,7 @@
 							</a>
 					</li>
 					<li class="nav-item">
-					    <a href="#" class="nav-link ">
+					    <a href="#eee" class="nav-link ">
                 <span class="pcoded-micon"> <i class="feather icon-award"></i> </span>
 								<span class="pcoded-mtext"> گزارش گیری </span>
 							</a>
@@ -44,6 +44,11 @@
 						<ul class="pcoded-submenu">
 							<li><a href="/bc_toasts.html">Toasts</a></li>
 							<li><a href="/bc_extra.html">Other</a></li>
+							 {% for S in temp12 %}
+							  {% if Rom.node_id == S.UUID %}
+							    {{ S.UUID }} <br>
+								{% endif %}
+							 {% endfor %}
 						</ul>
 					</li>
 
@@ -65,7 +70,7 @@
 						  </a>
 					</li>
 					<li class="nav-item">
-					    <a target="_blank" rel="noopener" href="https://appseed.us/support" class="nav-link "><span class="pcoded-micon">
+					    <a href="#ttt" class="nav-link "><span class="pcoded-micon">
 						    <i class="feather icon-settings"></i></span><span class="pcoded-mtext"> تنظیمات </span>
 					  	</a>
 					</li>
@@ -76,17 +81,17 @@
 						<label> آتروتک </label>
 					</li>
 					<li class="nav-item">
-					    <a href="{% url 'logout' %}" class="nav-link "><span class="pcoded-micon">
+					    <a href="#www" class="nav-link "><span class="pcoded-micon">
 						    <i class="feather icon-user"></i></span><span class="pcoded-mtext"> مستندات </span>
 						  </a>
 					</li>
 					<li class="nav-item">
-					    <a href="{% url 'logout' %}" class="nav-link "><span class="pcoded-micon">
+					    <a href="#fff" class="nav-link "><span class="pcoded-micon">
 						    <i class="feather icon-user"></i></span><span class="pcoded-mtext"> سوالات متداول </span>
 						  </a>
 					</li>
 					<li class="nav-item">
-					    <a target="_blank" rel="noopener" href="https://appseed.us/support" class="nav-link "><span class="pcoded-micon">
+					    <a href="#yuu" class="nav-link "><span class="pcoded-micon">
 						    <i class="feather icon-info"></i></span><span class="pcoded-mtext"> پشتیبانی </span>
 					  	</a>
 					</li>
@@ -95,12 +100,7 @@
 
 
 
-
-
-
-
-
-<br><hr><br>
+<br><br><br><br><br><br><br><hr><br>
 
 
 						<li class="nav-item pcoded-menu-caption">
