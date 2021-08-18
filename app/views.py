@@ -109,17 +109,15 @@ def nodes(request):
 def nodes_detail(request, id):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
-
     node = get_object_or_404(models.Rom, id=id)
     sensors = models.Rom.objects.filter(node_id=node.node_id)
     sensors_uuid = models.Rom.objects.filter(node_id=node.node_id).values('UUID')
 
+#--------- Temp12 -------------------------------------------------------------
+    temp_detail = models.Temp12.objects.all()
     temp12 = models.Temp12.objects.filter(UUID__in=sensors_uuid)
-
     temp_uuid = models.Temp12.objects.filter(UUID__in=sensors_uuid).values('UUID').distinct()
     temp_just_uuid=list(temp_uuid.values_list('UUID', flat=True))
-
-
 
     i=0
     temp_data =[]
@@ -140,7 +138,8 @@ def nodes_detail(request, id):
     'node':node,
     'sensors':sensors,
     'temp12':temp12,
-    'temp_data':temp_data
+    'temp_data':temp_data,
+    'temp_detail':temp_detail
     }
     context['segment'] = 'nodes_detail'
     html_template = loader.get_template( 'nodes_detail.html' )
