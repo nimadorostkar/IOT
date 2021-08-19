@@ -143,6 +143,8 @@
 {% block javascripts %}
 
 <script>
+
+
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
@@ -165,63 +167,70 @@
     $(document).ready(function() {
         setTimeout(function() {
 
-              {% for Rom in sensors %}
-                  {% if Rom.family_id == "28" %}
-                    {% for Temp12 in temp_data %}
-                    {% if Rom.UUID == Temp12.UUID %}
 
-              $(function() {
-                  var options = {
-                      chart: {
-                          height: 250,
-                          type: 'line',
-                          zoom: {
-                              enabled: false
-                          }
-                      },
-                      dataLabels: {
-                          enabled: false,
-                          width: 2,
-                      },
-                      stroke: {
-                          curve: 'straight',
-                      },
-                      colors: ["#ea680b"],
-                      fill: {
-                          type: "gradient",
-                          gradient: {
-                              shade: 'light'
-                          },
-                      },
-                      series: [{
-                          name: "temp",
-                          data: [35, 37, 36, 38, 35, 36, 38]
-                      }],
-                      title: {
-                          text: '',
-                          align: 'left'
-                      },
-                      grid: {
-                          row: {
-                              colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-                              opacity: 0.5
-                          },
-                      },
-                      xaxis: {
-                          categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
-                      }
-                  }
-                  var chart = new ApexCharts(
-                      document.querySelector("#line-chart-temp{{Temp12.UUID}}"),
-                      options
-                  );
-                  chart.render();
-              });
+          {% for Rom in sensors %}
+              {% if Rom.family_id == "28" %}
+                {% for Temp12 in temp_data %}
+                {% if Rom.UUID == Temp12.UUID %}
 
+
+                $(function() {
+
+
+                    var last7 = {{Temp12.last7}}
+
+                    var options = {
+                        chart: {
+                            height: 250,
+                            type: 'line',
+                            zoom: {
+                                enabled: false
+                            }
+                        },
+                        dataLabels: {
+                            enabled: false,
+                            width: 2,
+                        },
+                        stroke: {
+                            curve: 'straight',
+                        },
+                        colors: ["#ea680b"],
+                        fill: {
+                            type: "gradient",
+                            gradient: {
+                                shade: 'light'
+                            },
+                        },
+                        series: [{
+                            name: "temp",
+                            data: last7
+                        }],
+                        title: {
+                            text: '',
+                            align: 'left'
+                        },
+                        grid: {
+                            row: {
+                                colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                                opacity: 0.5
+                            },
+                        },
+                        xaxis: {
+                            categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
+                        }
+                    }
+                    var chart = new ApexCharts(
+                        document.querySelector("#line-chart-temp{{Temp12.UUID}}"),
+                        options
+                    );
+                    chart.render();
+                });
+
+                {% endif %}
+                {% endfor %}
              {% endif %}
-             {% endfor %}
-           {% endif %}
-          {% endfor %}
+           {% endfor %}
+
 
         }, 700);
     });
