@@ -177,7 +177,8 @@
                 $(function() {
 
 
-                    var last7 = {{Temp12.last7}}
+                    var chart7 = {% for last7 in Temp12.last7.all %} {{ last7 }} {% endfor %}
+                    console.log(chart7);
 
                     var options = {
                         chart: {
@@ -203,7 +204,7 @@
                         },
                         series: [{
                             name: "temp",
-                            data: last7
+                            data: chart7
                         }],
                         title: {
                             text: '',
