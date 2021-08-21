@@ -129,8 +129,14 @@ def nodes_detail(request, id):
         last_update = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('created_on', flat=True).latest('created_on')
         last7 = list(models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True).order_by('-created_on')[:7])
         last7.reverse()
-        data_feeding =  { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':max, 'min_temp':min, 'avg_temp':avg, 'last_update':last_update, "last7":last7 }
+        data_feeding =  { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':max, 'min_temp':min, 'avg_temp':avg, 'last_update':last_update }
         temp_data.append(data_feeding)
+
+        last7 = list(models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True).order_by('-created_on')[:7])
+        last7.reverse()
+        last7_data =  { 'UUID':temp_just_uuid[i], 'data':last7 }
+        temp_last_7_chart.append(last7_data)
+
         i+=1
 
 
@@ -139,7 +145,8 @@ def nodes_detail(request, id):
     'node':node,
     'sensors':sensors,
     'temp12':temp12,
-    'temp_data':temp_data
+    'temp_data':temp_data,
+    'temp_last_7_chart':temp_last_7_chart
     }
     context['segment'] = 'nodes_detail'
     html_template = loader.get_template( 'nodes_detail.html' )

@@ -161,9 +161,9 @@
 
 //------- Temp --------------------------
 
-var last_7_chart = {{Temp12.last7|safe}};
-console.log(last_7_chart);
 
+var temp_last_7_chart = {{temp_last_7_chart|safe}};
+console.log(temp_last_7_chart);
 
     $(document).ready(function() {
         setTimeout(function() {
@@ -172,6 +172,11 @@ console.log(last_7_chart);
               {% if Rom.family_id == "28" %}
                 {% for Temp12 in temp_data %}
                 {% if Rom.UUID == Temp12.UUID %}
+
+
+                {% for Temp12.UUID in temp_last_7_chart %}
+                    console.log('{{Temp12.UUID}}');
+                {% endfor %}
 
 
                 //var i;
