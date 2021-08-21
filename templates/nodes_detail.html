@@ -164,6 +164,7 @@
 
 var temp_last_7_chart = {{temp_last_7_chart|safe}};
 
+
     $(document).ready(function() {
         setTimeout(function() {
 
@@ -172,16 +173,33 @@ var temp_last_7_chart = {{temp_last_7_chart|safe}};
                 {% for Temp12 in temp_data %}
                 {% if Rom.UUID == Temp12.UUID %}
 
+                var i;
+                for (i = 0; i < temp_last_7_chart.length; i++) {
+                  if (temp_last_7_chart[i].UUID === '{{Temp12.UUID}}') {
 
-                 var j = 0;
-                 while (j < temp_last_7_chart.length) {
-                   if (temp_last_7_chart[j].UUID = '{{Temp12.UUID}}') {
-                     var chart_data = temp_last_7_chart[j].data;
-                     console.log(chart_data);
-                     brack();
-                     j++;
-                   }
-                 }
+                    var chart_data = temp_last_7_chart[i].data;
+
+                    
+                    console.log(chart_data);
+                  }
+                }
+
+
+              //  var hh = '{{Temp12.UUID}}';
+              //  console.log(hh);
+
+
+                // var j = 0;
+                // while (j < temp_last_7_chart.length) {
+              //     if (temp_last_7_chart[j].UUID = '{{Temp12.UUID}}') {
+                //     var chart_data = temp_last_7_chart[j].data;
+                  //   console.log(chart_data);
+                  //   brack();
+                  //   j++;
+                  // }
+                // }
+
+
 
 
                 $(function() {
