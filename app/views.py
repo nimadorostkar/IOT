@@ -145,7 +145,8 @@ def nodes_detail(request, id):
     'node':node,
     'sensors':sensors,
     'temp12':temp12,
-    'temp_data':temp_data
+    'temp_data':temp_data,
+    'temp_last_7_chart':temp_last_7_chart
     }
     context['segment'] = 'nodes_detail'
     html_template = loader.get_template( 'nodes_detail.html' )

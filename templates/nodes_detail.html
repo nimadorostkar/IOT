@@ -99,9 +99,6 @@
 
 
 
-
-
-
 <!--
 
 <br><br><br><br><br><br><br><br><br>
@@ -164,36 +161,26 @@
 
 //------- Temp --------------------------
 
-var temp_last_7_chart = [
-   {% for Rom in sensors %}
-      {% if Rom.family_id == "28" %}
-        {% for Temp12 in temp_data %}
-        {% if Rom.UUID == Temp12.UUID %}
-           { "uuid": "{{ Temp12.UUID }}", "chart": {% for last7 in Temp12.last7.all %} {{ last7 }} {% endfor %} },
-        {% endif %}
-        {% endfor %}
-     {% endif %}
-   {% endfor %}
-];
-console.log(temp_last_7_chart)
 
+var temp_last_7_chart = {{temp_last_7_chart|safe}};
 
 
     $(document).ready(function() {
         setTimeout(function() {
-
 
           {% for Rom in sensors %}
               {% if Rom.family_id == "28" %}
                 {% for Temp12 in temp_data %}
                 {% if Rom.UUID == Temp12.UUID %}
 
-                //for(var i = 0; i < temp_last_7_chart.length; i++) {
-                  //if (temp_last_7_chart[i].uuid = '{{Temp12.UUID}}') {
-                    //var chart_data = temp_last_7_chart[i].chart;
-                    //console.log(chart_data)
-                  //}
-                 //}
+
+
+                for(var i = 0; i < temp_last_7_chart.length; i++) {
+                  if (temp_last_7_chart[i].uuid = '{{Temp12.UUID}}') {
+                    var chart_data = temp_last_7_chart[i].data;
+                  }
+                 }
+                 console.log(chart_data);
 
 
                 $(function() {
@@ -222,7 +209,7 @@ console.log(temp_last_7_chart)
                         },
                         series: [{
                             name: "temp",
-                            data: [3,3,3,3,3,3,3]
+                            data: chart_data
                         }],
                         title: {
                             text: '',
