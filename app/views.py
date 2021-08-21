@@ -137,9 +137,6 @@ def nodes_detail(request, id):
 
         i+=1
 
-    print(temp_last_7_chart)
-
-
 
     context = {
     'devices':devices,

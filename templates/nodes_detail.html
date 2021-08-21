@@ -164,8 +164,6 @@
 
 var temp_last_7_chart = {{temp_last_7_chart|safe}};
 
-
-
     $(document).ready(function() {
         setTimeout(function() {
 
@@ -173,7 +171,6 @@ var temp_last_7_chart = {{temp_last_7_chart|safe}};
               {% if Rom.family_id == "28" %}
                 {% for Temp12 in temp_data %}
                 {% if Rom.UUID == Temp12.UUID %}
-
 
 
                  var j = 0;
@@ -185,8 +182,6 @@ var temp_last_7_chart = {{temp_last_7_chart|safe}};
                      j++;
                    }
                  }
-
-
 
 
                 $(function() {
