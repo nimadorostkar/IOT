@@ -130,7 +130,8 @@ def nodes_detail(request, id):
         data_feeding =  { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':max, 'min_temp':min, 'avg_temp':avg, 'last_update':last_update }
         temp_data.append(data_feeding)
 
-        last7 = list(models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True)[:7])
+        last7 = list(models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True).order_by('-created_on')[:7])
+        last7.reverse()
         last7_data =  { 'UUID':temp_just_uuid[i], 'data':last7 }
         temp_last_7_chart.append(last7_data)
 

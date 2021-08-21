@@ -30,6 +30,7 @@ admin.site.register(models.Node1, Node1Admin)
 #------------------------------------------------------------------------------
 class Temp12Admin(admin.ModelAdmin):
     list_display = ('UUID', 'temp', 'created_on')
+    list_filter = ('UUID','created_on')
 admin.site.register(models.Temp12, Temp12Admin)
 
 #------------------------------------------------------------------------------
