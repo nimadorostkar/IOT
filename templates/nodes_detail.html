@@ -165,6 +165,7 @@
 var temp_last_7_chart = {{temp_last_7_chart|safe}};
 
 
+
     $(document).ready(function() {
         setTimeout(function() {
 
@@ -175,12 +176,17 @@ var temp_last_7_chart = {{temp_last_7_chart|safe}};
 
 
 
-                for(var i = 0; i < temp_last_7_chart.length; i++) {
-                  if (temp_last_7_chart[i].uuid = '{{Temp12.UUID}}') {
-                    var chart_data = temp_last_7_chart[i].data;
-                  }
+                 var j = 0;
+                 while (j < temp_last_7_chart.length) {
+                   if (temp_last_7_chart[j].UUID = '{{Temp12.UUID}}') {
+                     var chart_data = temp_last_7_chart[j].data;
+                     console.log(chart_data);
+                     brack();
+                     j++;
+                   }
                  }
-                 console.log(chart_data);
+
+
 
 
                 $(function() {
