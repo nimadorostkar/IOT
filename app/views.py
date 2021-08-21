@@ -119,19 +119,24 @@ def nodes_detail(request, id):
     temp_just_uuid=list(temp_uuid.values_list('UUID', flat=True))
 
     i=0
-    temp_data =[]
+    temp_data = []
+    temp_last_7_chart = []
     while i < len(temp_just_uuid):
         Temp12_value = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True).latest('created_on')
         max = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).aggregate(Max('temp'))['temp__max']
         min = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).aggregate(Min('temp'))['temp__min']
         avg = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).aggregate(Avg('temp'))['temp__avg']
         last_update = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('created_on', flat=True).latest('created_on')
-        last7 = list(models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True)[:7])
-        data_feeding =  { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':max, 'min_temp':min, 'avg_temp':avg, 'last_update':last_update, 'last7':last7 }
+        data_feeding =  { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':max, 'min_temp':min, 'avg_temp':avg, 'last_update':last_update }
         temp_data.append(data_feeding)
+
+        last7 = list(models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True)[:7])
+        last7_data =  { 'UUID':temp_just_uuid[i], 'data':last7 }
+        temp_last_7_chart.append(last7_data)
+
         i+=1
 
-    print(temp_data)
+    print(temp_last_7_chart)
 
 
 
