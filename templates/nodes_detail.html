@@ -169,7 +169,7 @@ var chart7 = [
       {% if Rom.family_id == "28" %}
         {% for Temp12 in temp_data %}
         {% if Rom.UUID == Temp12.UUID %}
-           { "uuid": "{{ Temp12.UUID }}", "chart": {% for last7 in Temp12.last7.all %} '{{ last7 }}' {% endfor %} },
+           { "uuid": "{{ Temp12.UUID }}", "chart": '{% for last7 in Temp12.last7.all %} {{ last7 }} {% endfor %}' },
         {% endif %}
         {% endfor %}
      {% endif %}
