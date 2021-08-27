@@ -24,7 +24,7 @@ class UserForm(UserCreationForm):
 
 
 #------------------------------------------------------------------------------
-class User_uuidForm(forms.ModelForm):
+class User_uuidForm(forms.ModelForm): 
 	class Meta:
 		model = User_uuid
 		fields = ['UUID']
