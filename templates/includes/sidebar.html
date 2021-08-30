@@ -42,7 +42,11 @@
 					<li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext"> {{ Rom.name }} </span></a>
 						<ul class="pcoded-submenu">
-							<li><a href="#"> {{ Rom.node_id }} </a> </li>
+							{% for temp in side_temp %}
+							  {% if Rom.UUID == temp.node_id %}
+						    	<li><a href="#"> {{ temp.name }} <small>  </small> </a> </li>
+								{% endif %}
+							{% endfor %}
 						</ul>
 					</li>
 					{% endfor %}
