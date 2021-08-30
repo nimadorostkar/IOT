@@ -145,6 +145,7 @@ def nodes_detail(request, id):
 
     context = {
     'devices':devices,
+    'side_temp':side_temp,
     'node':node,
     'sensors':sensors,
     'temp12':temp12,
