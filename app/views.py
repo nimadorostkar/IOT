@@ -16,6 +16,7 @@ from django.db.models import Count, Max, Min, Avg
 def index(request):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
+    side_temp = models.Rom.objects.filter(family_id='28')
 
     context = {'devices':devices}
     context['segment'] = 'index'
@@ -32,6 +33,7 @@ def index(request):
 def profile(request):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
+    side_temp = models.Rom.objects.filter(family_id='28')
 
     profile = models.Profile.objects.filter(user=request.user)
     if request.method == 'POST':
@@ -74,6 +76,7 @@ def profile(request):
 def nodes(request):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
+    side_temp = models.Rom.objects.filter(family_id='28')
     device_name_Form = Device_name_Form(request.POST)
     user_uuid_Form = User_uuidForm(request.POST, instance=request.user)
 
@@ -109,7 +112,6 @@ def nodes(request):
 def nodes_detail(request, id):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
-
     side_temp = models.Rom.objects.filter(family_id='28')
 
     node = get_object_or_404(models.Rom, id=id)
@@ -165,6 +167,7 @@ def nodes_detail(request, id):
 def sensors(request):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
+    side_temp = models.Rom.objects.filter(family_id='28')
 
     device_node_id = models.Rom.objects.filter(UUID__in=uuid, family_id='01').values('node_id')
     sensor_temp = models.Temp12.objects.filter(UUID__in=device_node_id)
