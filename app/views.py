@@ -109,6 +109,9 @@ def nodes(request):
 def nodes_detail(request, id):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
+
+    side_temp = models.Rom.objects.filter(family_id='28')
+
     node = get_object_or_404(models.Rom, id=id)
     sensors = models.Rom.objects.filter(node_id=node.node_id)
     sensors_uuid = models.Rom.objects.filter(node_id=node.node_id).values('UUID')
