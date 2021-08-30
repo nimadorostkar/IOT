@@ -168,7 +168,9 @@ def sensors_detail(request):
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
     side_temp = models.Rom.objects.filter(family_id='28')
 
-    context = {'devices':devices, 'side_temp':side_temp}
+    sensor = get_object_or_404(models.Temp12, id=id)
+
+    context = {'devices':devices, 'side_temp':side_temp, 'sensor':sensor}
     context['segment'] = 'sensors_detail'
     html_template = loader.get_template( 'sensors_detail.html' )
     return HttpResponse(html_template.render(context, request))
