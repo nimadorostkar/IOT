@@ -11,6 +11,7 @@ urlpatterns = [
 
     path('nodes', views.nodes, name='nodes'),
     path('nodes_detail/<int:id>/',views.nodes_detail,name='nodes_detail'),
+    path('sensors_detail/<int:id>/',views.sensors_detail,name='sensors_detail'),
 
     path('sensors', views.sensors, name='sensors'),
 

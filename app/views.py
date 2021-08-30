@@ -162,6 +162,22 @@ def nodes_detail(request, id):
 
 
 
+@login_required(login_url="/login/")
+def sensors_detail(request):
+    uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
+    devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
+    side_temp = models.Rom.objects.filter(family_id='28')
+
+    context = {'devices':devices, 'side_temp':side_temp}
+    context['segment'] = 'sensors_detail'
+    html_template = loader.get_template( 'sensors_detail.html' )
+    return HttpResponse(html_template.render(context, request))
+
+#------------------------------------------------------------------------------
+
+
+
+
 
 @login_required(login_url="/login/")
 def sensors(request):

@@ -93,6 +93,9 @@ class Temp12(models.Model):
         verbose_name = " سنسور دما Temp12 "
         verbose_name_plural = " سنسور های دما  Temp12 "
 
+    def get_absolute_url(self):
+        return reverse('app:sensors_detail',args=[self.id])
+
 
 
 #------------------------------------------------------------------------------
