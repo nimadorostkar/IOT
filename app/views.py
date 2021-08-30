@@ -18,7 +18,7 @@ def index(request):
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
     side_temp = models.Rom.objects.filter(family_id='28')
 
-    context = {'devices':devices}
+    context = {'devices':devices, 'side_temp':side_temp}
     context['segment'] = 'index'
 
     html_template = loader.get_template( 'index.html' )
@@ -60,7 +60,7 @@ def profile(request):
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
 
-    context = {'user_form':user_form, 'profile_form':profile_form, 'devices':devices}
+    context = {'user_form':user_form, 'profile_form':profile_form, 'side_temp':side_temp, 'devices':devices}
     context['segment'] = 'profile'
 
     html_template = loader.get_template( 'accounts/profile.html' )
@@ -100,7 +100,7 @@ def nodes(request):
     else:
         user_uuid_Form = User_uuidForm(request.POST)
 
-    context = {'user_uuid_Form':user_uuid_Form, 'devices':devices, 'device_name_Form':device_name_Form}
+    context = {'user_uuid_Form':user_uuid_Form, 'devices':devices, 'side_temp':side_temp, 'device_name_Form':device_name_Form}
     context['segment'] = 'nodes'
     html_template = loader.get_template( 'nodes.html' )
     return HttpResponse(html_template.render(context, request))
@@ -172,7 +172,7 @@ def sensors(request):
     device_node_id = models.Rom.objects.filter(UUID__in=uuid, family_id='01').values('node_id')
     sensor_temp = models.Temp12.objects.filter(UUID__in=device_node_id)
 
-    context = {'devices':devices, 'sensor_temp':sensor_temp}
+    context = {'devices':devices, 'side_temp':side_temp, 'sensor_temp':sensor_temp}
     context['segment'] = 'sensors'
     html_template = loader.get_template( 'sensors.html' )
     return HttpResponse(html_template.render(context, request))
