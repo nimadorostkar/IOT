@@ -197,6 +197,17 @@ def sensors(request):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 @login_required(login_url="/login/")
 def pages(request):
     context = {}
