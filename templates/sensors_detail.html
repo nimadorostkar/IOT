@@ -23,7 +23,15 @@
                     <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
                     <li class="breadcrumb-item"><a href="#!"> IOT </a></li>
                     <li class="breadcrumb-item"><a href="#!"> نود ها </a></li>
-                    <li class="breadcrumb-item"><a href="#!"> node valed </a></li>
+                    <li class="breadcrumb-item">
+                      <a href="#!">
+                        {% for Rom in devices %}
+                        {% if Rom.UUID == sensor.node_id %}
+                         {{ Rom.name }}
+                        {% endif %}
+                        {% endfor %}
+                      </a>
+                    </li>
                     <li class="breadcrumb-item"><a href="#!"> {{sensor.name}} </a></li>
                   </ul>
                 </div>
@@ -32,18 +40,21 @@
           </div>
           <!-- [ breadcrumb ] end -->
 
-          <hr><br>
-
-          
-          <hr><br><br>
 
 
 
-         <hr>
+
+
+
+         <br><hr>
          <h1> uuid: {{sensor.UUID}} </h1>
          <h1> name: {{sensor.name}} </h1>
          <h1> family_id: {{sensor.family_id}} </h1>
          <h1> node_id: {{sensor.node_id}} </h1>
+
+
+
+
 
 
 
