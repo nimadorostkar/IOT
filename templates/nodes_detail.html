@@ -25,7 +25,7 @@
                   <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
                     <li class="breadcrumb-item"><a href="#!"> IOT </a></li>
-                    <li class="breadcrumb-item"><a href="#!"> Nodes </a></li>
+                    <li class="breadcrumb-item"><a href="#!"> نود ها </a></li>
                     <li class="breadcrumb-item"><a href="#!"> {{ node.name }} </a></li>
                   </ul>
                 </div>
@@ -72,7 +72,7 @@
                                  </div>
                                  <div class="col" align="right">
                                      <small> {{ Rom.UUID }} </small>
-                                     <a href="{{ Temp12.get_absolute_url }}"><h4 class="m-0 text-white text-right"> {{ Rom.name }} {{ Temp12.min_temp}}  </h4></a>
+                                     <a href="{{ Rom.get_absolute_sensor_url }}"><h4 class="m-0 text-white text-right"> {{ Rom.name }} </h4></a>
                                  </div>
                              </div>
                          </div>

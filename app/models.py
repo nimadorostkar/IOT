@@ -60,6 +60,9 @@ class Rom(models.Model):
     def get_absolute_url(self):
         return reverse('app:nodes_detail',args=[self.id])
 
+    def get_absolute_sensor_url(self):
+        return reverse('app:sensors_detail',args=[self.id])
+
 
 
 #------------------------------------------------------------------------------
