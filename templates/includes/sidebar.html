@@ -44,7 +44,7 @@
 						<ul class="pcoded-submenu">
 							{% for temp in side_temp %}
 							  {% if Rom.UUID == temp.node_id %}
-						    	<li><a href="#"> {{ temp.name }} <small>  </small> </a> </li>
+						    	<li><a href="{{ temp.get_absolute_url }}"> {{ temp.name }} <small>  </small> </a> </li>
 								{% endif %}
 							{% endfor %}
 						</ul>
