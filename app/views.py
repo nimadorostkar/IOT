@@ -168,7 +168,7 @@ def sensors_detail(request, id):
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
     side_temp = models.Rom.objects.filter(family_id='28')
 
-    sensor = get_object_or_404(models.Temp12, id=id)
+    sensor = get_object_or_404(models.Rom, id=id)
 
     context = {'devices':devices, 'side_temp':side_temp, 'sensor':sensor}
     context['segment'] = 'sensors_detail'

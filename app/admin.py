@@ -19,7 +19,7 @@ admin.site.register(models.User_uuid, User_uuidAdmin)
 
 #------------------------------------------------------------------------------
 class RomAdmin(admin.ModelAdmin):
-    list_display = ('name', 'UUID', 'family_id', 'node_id', 'created_on')
+    list_display = ('name', 'UUID', 'family_id', 'node_id', 'created_on', 'id')
 admin.site.register(models.Rom, RomAdmin)
 
 #------------------------------------------------------------------------------
