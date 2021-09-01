@@ -96,10 +96,6 @@ class Temp12(models.Model):
         verbose_name = " سنسور دما Temp12 "
         verbose_name_plural = " سنسور های دما  Temp12 "
 
-    def window_size(self):
-        if self.temp > 50:
-            print("window size error")
-
 
 
 #------------------------------------------------------------------------------
