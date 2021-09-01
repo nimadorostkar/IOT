@@ -6,6 +6,7 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
+{% load humanize %}
 
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container">
@@ -45,8 +46,8 @@
     			<div class="row">
 
             <!-- [ stiped-table ] start -->
-            <div class="col-xl-12" align="right" dir="rtl">
-                <div class="card">
+            <div class="col-xl-12">
+                <div class="card" align="right" dir="rtl">
                     <div class="card-header">
                         <span class="d-block m-t-5"> اطلاعات سنسور <b> {{sensor.name}} </b>
                           {% if sensor.family_id == '28' %}
@@ -73,8 +74,8 @@
                                         <td> {{Temp12_value}} </td>
                                         <td> {{max}} </td>
                                         <td> {{min}} </td>
-                                        <td> {{avg}} </td>
-                                        <td> {{last_update}} </td>
+                                        <td> {{avg|floatformat:1}} </td>
+                                        <td> {{last_update|naturaltime}} </td>
                                     </tr>
 
                                 </tbody>
@@ -86,23 +87,23 @@
             <!-- [ stiped-table ] end -->
 
 
+            <!-- [ chart ] start -->
+            <div class="col-xl-12">
+                <div class="card" align="right" dir="rtl">
+                    <div class="card-header">
+                        <span class="d-block m-t-5"> نمودار </span>
+                    </div>
+                    <div class="card-body table-border-style">
+                          <div class="text-dark" id="chart-temp"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ chart ] end -->
+
+
 
     			</div>
     			<!-- [ Main Content ] end -->
-
-
-
-
-
-
-
-
-
-         <br><hr>
-         <h1> uuid: {{sensor.UUID}} </h1>
-         <h1> name: {{sensor.name}} </h1>
-         <h1> family_id: {{sensor.family_id}} </h1>
-         <h1> node_id: {{sensor.node_id}} </h1>
 
 
 
@@ -117,4 +118,70 @@
 
 {% endblock content %}
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %} {% endblock javascripts %}
+{% block javascripts %}
+
+<script>
+
+$(document).ready(function() {
+    setTimeout(function() {
+
+          $(function() {
+
+              var options = {
+                  chart: {
+                      height: 250,
+                      type: 'line',
+                      zoom: {
+                          enabled: false
+                      }
+                  },
+                  dataLabels: {
+                      enabled: false,
+                      width: 2,
+                  },
+                  stroke: {
+                      curve: 'straight',
+                  },
+                  colors: ["#ea680b"],
+                  fill: {
+                      type: "gradient",
+                      gradient: {
+                          shade: 'light'
+                      },
+                  },
+                  series: [{
+                      name: "temp",
+                      data: [54,55,53,55,56,57,55]
+                  }],
+                  title: {
+                      text: '',
+                      align: 'left'
+                  },
+                  grid: {
+                      row: {
+                          colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                          opacity: 0.5
+                      },
+                  },
+                  xaxis: {
+                      categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
+                  }
+              }
+              var chart = new ApexCharts(
+                  document.querySelector("#chart-temp"),
+                  options
+              );
+              chart.render();
+          });
+
+
+    }, 700);
+});
+
+</script>
+
+
+
+<script src="/static/assets/js/plugins/apexcharts.min.js"></script>
+<script src="/static/assets/js/pages/chart-apex.js"></script>
+{% endblock javascripts %}
