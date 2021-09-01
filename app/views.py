@@ -170,6 +170,8 @@ def sensors_detail(request, id):
     min = models.Temp12.objects.filter(UUID=sensor.UUID).aggregate(Min('temp'))['temp__min']
     avg = models.Temp12.objects.filter(UUID=sensor.UUID).aggregate(Avg('temp'))['temp__avg']
     last_update = models.Temp12.objects.filter(UUID=sensor.UUID).values_list('created_on', flat=True).latest('created_on')
+    last7 = list(models.Temp12.objects.filter(UUID=sensor.UUID).values_list('temp', flat=True).order_by('-created_on')[:7])
+    last7.reverse()
 
 
     context = {'devices':devices,
@@ -179,7 +181,8 @@ def sensors_detail(request, id):
      'max':max,
      'min':min,
      'avg':avg,
-     'last_update':last_update
+     'last_update':last_update,
+     'last7':last7
 
       }
     context['segment'] = 'sensors_detail'

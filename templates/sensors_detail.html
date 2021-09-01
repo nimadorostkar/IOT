@@ -122,57 +122,60 @@
 
 <script>
 
+
 $(document).ready(function() {
     setTimeout(function() {
 
-          $(function() {
+      var last7 = {{last7|safe}};
 
-              var options = {
-                  chart: {
-                      height: 250,
-                      type: 'line',
-                      zoom: {
-                          enabled: false
-                      }
-                  },
-                  dataLabels: {
-                      enabled: false,
-                      width: 2,
-                  },
-                  stroke: {
-                      curve: 'straight',
-                  },
-                  colors: ["#ea680b"],
-                  fill: {
-                      type: "gradient",
-                      gradient: {
-                          shade: 'light'
-                      },
-                  },
-                  series: [{
-                      name: "temp",
-                      data: [54,55,53,55,56,57,55]
-                  }],
-                  title: {
-                      text: '',
-                      align: 'left'
-                  },
-                  grid: {
-                      row: {
-                          colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-                          opacity: 0.5
-                      },
-                  },
-                  xaxis: {
-                      categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
+      $(function() {
+
+          var options = {
+              chart: {
+                  height: 250,
+                  type: 'line',
+                  zoom: {
+                      enabled: false
                   }
+              },
+              dataLabels: {
+                  enabled: false,
+                  width: 2,
+              },
+              stroke: {
+                  curve: 'straight',
+              },
+              colors: ["#ea680b"],
+              fill: {
+                  type: "gradient",
+                  gradient: {
+                      shade: 'light'
+                  },
+              },
+              series: [{
+                  name: "temp",
+                  data: last7
+              }],
+              title: {
+                  text: '',
+                  align: 'left'
+              },
+              grid: {
+                  row: {
+                      colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                      opacity: 0.5
+                  },
+              },
+              xaxis: {
+                  categories: ['شنبه', '۱شنبه', '۲شنبه', '۳شنبه', '۴شنبه', '۵شنبه', 'جمعه'],
               }
-              var chart = new ApexCharts(
-                  document.querySelector("#chart-temp"),
-                  options
-              );
-              chart.render();
-          });
+          }
+          var chart = new ApexCharts(
+              document.querySelector("#chart-temp"),
+              options
+          );
+          chart.render();
+      });
 
 
     }, 700);
