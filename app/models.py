@@ -96,6 +96,13 @@ class Temp12(models.Model):
         verbose_name = " سنسور دما Temp12 "
         verbose_name_plural = " سنسور های دما  Temp12 "
 
+    def windowsize(self):
+        if self.temp > 40:
+            return False
+        else:
+            return True
+
+
 
 
 #------------------------------------------------------------------------------
