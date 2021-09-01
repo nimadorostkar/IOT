@@ -132,18 +132,13 @@ def nodes_detail(request, id):
         min = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).aggregate(Min('temp'))['temp__min']
         avg = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).aggregate(Avg('temp'))['temp__avg']
         last_update = models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('created_on', flat=True).latest('created_on')
-        last7 = list(models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True).order_by('-created_on')[:7])
-        last7.reverse()
         data_feeding =  { 'UUID':temp_just_uuid[i], 'last_temp':Temp12_value, 'max_temp':max, 'min_temp':min, 'avg_temp':avg, 'last_update':last_update }
         temp_data.append(data_feeding)
-
         last7 = list(models.Temp12.objects.filter(UUID=temp_just_uuid[i]).values_list('temp', flat=True).order_by('-created_on')[:7])
         last7.reverse()
         last7_data =  { 'UUID':temp_just_uuid[i], 'data':last7 }
         temp_last_7_chart.append(last7_data)
-
         i+=1
-
 
     context = {
     'devices':devices,
@@ -170,7 +165,23 @@ def sensors_detail(request, id):
 
     sensor = get_object_or_404(models.Rom, id=id)
 
-    context = {'devices':devices, 'side_temp':side_temp, 'sensor':sensor}
+    Temp12_value = models.Temp12.objects.filter(UUID=sensor.UUID).values_list('temp', flat=True).latest('created_on')
+    max = models.Temp12.objects.filter(UUID=sensor.UUID).aggregate(Max('temp'))['temp__max']
+    min = models.Temp12.objects.filter(UUID=sensor.UUID).aggregate(Min('temp'))['temp__min']
+    avg = models.Temp12.objects.filter(UUID=sensor.UUID).aggregate(Avg('temp'))['temp__avg']
+    last_update = models.Temp12.objects.filter(UUID=sensor.UUID).values_list('created_on', flat=True).latest('created_on')
+
+
+    context = {'devices':devices,
+     'side_temp':side_temp,
+     'sensor':sensor,
+     'Temp12_value':Temp12_value,
+     'max':max,
+     'min':min,
+     'avg':avg,
+     'last_update':last_update
+
+      }
     context['segment'] = 'sensors_detail'
     html_template = loader.get_template( 'sensors_detail.html' )
     return HttpResponse(html_template.render(context, request))
