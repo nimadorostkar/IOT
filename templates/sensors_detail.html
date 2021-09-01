@@ -48,7 +48,13 @@
             <div class="col-xl-12" align="right" dir="rtl">
                 <div class="card">
                     <div class="card-header">
-                        <span class="d-block m-t-5"> اطلاعات سنسور <b> {{sensor.name}} </b> <span class="badge badge-light-primary">سنسور دما</span>  </span>
+                        <span class="d-block m-t-5"> اطلاعات سنسور <b> {{sensor.name}} </b>
+                          {% if sensor.family_id == '28' %}
+                            <span class="badge badge-light-primary">سنسور دما</span>
+                          {% elif sensor.family_id == '15' %}
+                            <span class="badge badge-light-primary"> سنسور GPS </span>
+                          {% endif %}
+                        </span>
                     </div>
                     <div class="card-body table-border-style">
                         <div class="table-responsive">
@@ -59,8 +65,7 @@
                                         <th> بالا ترین دما </th>
                                         <th> پایین ترین دما </th>
                                         <th> میانگین دما </th>
-                                        <th> Name </th>
-                                        <th> Username </th>
+                                        <th> آخرین به روز رسانی </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,8 +74,7 @@
                                         <td> ۵۰ </td>
                                         <td> ۵۶ </td>
                                         <td> ۶۷ </td>
-                                        <td> Otto </td>
-                                        <td> @mdo </td>
+                                        <td> 1 week, 6 days ago </td>
                                     </tr>
 
                                 </tbody>
