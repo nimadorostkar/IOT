@@ -19714,6 +19714,10 @@ pre[class*=language-]:before {
     background: linear-gradient(45deg, #00234a, #599cea);
 }
 
+.bg-c-white {
+    background: linear-gradient(45deg, #f7f7f7, #c7cace);
+}
+
 .text-c-blue {
     color: #4099ff;
 }
