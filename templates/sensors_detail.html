@@ -102,7 +102,7 @@
 
 
             <!-- [ alarms ] start -->
-            <div class="col-xl-6">
+            <div class="col-xl-8">
                 <div class="card" align="right" dir="rtl">
                     <div class="card-header">
                         <span class="d-block m-t-5"> هشدار تغیرات دمایی </span>
@@ -114,22 +114,17 @@
             </div>
             <!-- [ alarms ] end -->
             <!-- [ rename ] start -->
-            <div class="col-xl-6">
+            <div class="col-xl-4">
                 <div class="card" align="right" dir="rtl">
                     <div class="card-header">
                         <span class="d-block m-t-5"> تغییر نام سنسور </span>
                     </div>
                     <div class="card-body table-border-style">
-                      <form action="/sensors_detail" method="post" class="form-inline">
+                      <form action="#" method="post" class="form-inline">
                         {% csrf_token %}
-                         <div class="row" align="right" dir="rtl">
-                              <div class="col-md-3 px-md-1">
-                                <div class="form-group">
-                                  <label> نام </label>
-                                  <input name="Sensor_name" type="text" class="form-control">
-                                </div>
-                              </div>
-                          </div>
+                          &nbsp;&nbsp;
+                          <input name="Sensor_name" type="text" class="form-control" placeholder="{{sensor.name}}">
+                          &nbsp;&nbsp;
                           <button type="submit" class="btn  btn-primary mb-2"> ذخیره </button>
                       </form>
                     </div>
