@@ -122,21 +122,13 @@
                     <div class="card-body table-border-style">
                       <form action="/nodes" method="post" class="form-inline">
                         {% csrf_token %}
-                        <div class="col-md-1 pr-md-1"> &nbsp;&nbsp;&nbsp; </div>
                          <div class="row" align="right" dir="rtl">
-                            <div class="col-md-3 pr-md-1">
-                              <div class="form-group">
-                                <label> UUID </label>
-                                <input name="Device_UUID" type="text" class="form-control" value="{{sensor.UUID}}" readonly>
+                              <div class="col-md-3 px-md-1">
+                                <div class="form-group">
+                                  <label> نام </label>
+                                  <input name="Sensor_name" type="text" class="form-control">
+                                </div>
                               </div>
-                            </div>
-                            <div class="col-md-2 pr-md-1"> &nbsp;&nbsp;&nbsp; </div>
-                            <div class="col-md-3 px-md-1">
-                              <div class="form-group">
-                                <label> نام </label>
-                                <input name="Device_name" type="text" class="form-control">
-                              </div>
-                            </div>
                           </div>
                           <button type="submit" class="btn  btn-primary mb-2"> ذخیره </button>
                       </form>

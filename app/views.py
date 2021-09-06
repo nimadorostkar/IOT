@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django import template
 from . import models
 from .models import Profile, User_uuid, Rom
-from .forms import ProfileForm, UserForm, User_uuidForm, Device_name_Form
+from .forms import ProfileForm, UserForm, User_uuidForm, Device_name_Form, Sensor_name_Form
 from django.db.models import Count, Max, Min, Avg
 
 
@@ -162,6 +162,7 @@ def sensors_detail(request, id):
     uuid = models.User_uuid.objects.filter(user=request.user).values('UUID')
     devices = models.Rom.objects.filter(UUID__in=uuid, family_id='01')
     side_temp = models.Rom.objects.filter(family_id='28')
+    sensor_name_form = Sensor_name_Form(request.POST)
 
     sensor = get_object_or_404(models.Rom, id=id)
 
@@ -173,6 +174,14 @@ def sensors_detail(request, id):
     last7 = list(models.Temp12.objects.filter(UUID=sensor.UUID).values_list('temp', flat=True).order_by('-created_on')[:7])
     last7.reverse()
 
+    if request.method == 'POST':
+        if sensor_name_form.is_valid():
+            obj = sensor
+            obj.name = sensor_name_form.cleaned_data['Sensor_name']
+            obj.save()
+            context = {'devices':devices,'side_temp':side_temp,'sensor':sensor,'Temp12_value':Temp12_value,'max':max,'min':min,'avg':avg,'last_update':last_update,'last7':last7,'sensor_name_form':sensor_name_form}
+            return render(request, 'sensors_detail.html', context)
+
 
     context = {'devices':devices,
      'side_temp':side_temp,
@@ -182,8 +191,8 @@ def sensors_detail(request, id):
      'min':min,
      'avg':avg,
      'last_update':last_update,
-     'last7':last7
-
+     'last7':last7,
+     'sensor_name_form':sensor_name_form
       }
     context['segment'] = 'sensors_detail'
     html_template = loader.get_template( 'sensors_detail.html' )
